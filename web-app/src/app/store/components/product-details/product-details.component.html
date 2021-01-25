@@ -1,0 +1,8 @@
+<div id="product-details">
+    <div *ngIf="product" class="product-details-content">
+        <h1> {{ product.description }} </h1>
+        <div (click)="close()">
+            remove
+        </div>
+    </div>
+</div>

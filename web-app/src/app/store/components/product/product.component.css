@@ -1,0 +1,115 @@
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+
+#box {
+    width: 100%;
+    height: 100%;
+}
+
+.product {
+    background-color: var(--app-background-accent);
+    width: 250px;
+    height: 250px;
+    border-radius: 30px;
+    transition: ease-in-out 0.3s;
+    margin: auto;
+    margin-top: 80px;
+    z-index: 1;
+    position: relative;
+}
+
+
+
+.product-image {
+    transition: ease-in-out 0.3s;
+    width: 150px;
+    margin: auto;
+    display: block;
+    position: relative;
+    top: -50px;
+    left: 0;
+}
+
+
+.product-content {
+    position: relative;
+    height: fit-content;
+    top: 10px;
+    left: 40px;
+    transition: ease-in-out 0.3s;
+}
+
+.product-content h4, 
+.product-content h6 {
+    font-family: var(--app-primary-font);
+}
+
+.product-details {
+    display: none;
+}
+
+.product-details .description {
+    position: relative;
+    top: -100px;
+    color: var(--app-dark-gray);
+}
+
+.product-details button {
+    position: absolute;
+    top: 70px;
+}
+
+.product:hover {
+    z-index: 120 !important;
+    width: 400px;
+    height: 300px;
+    cursor: pointer;
+    box-shadow: 2px 2px 6px #acacac;
+    transform: translateY(-5px);
+    margin-top: 1rem;
+}
+
+.product:hover .product-image {
+    animation-name: moveImage;
+    animation-duration: 0.3s;
+    left: -80px;
+}
+
+.product:hover .product-content {
+    top: 50px;
+}
+
+.product:hover .product-details {
+    animation: fadeIn; /* referring directly to the animation's @keyframe declaration */
+    animation-duration: 2s;
+    display: block;
+}
+
+.product:hover .product-details .btn-primary {
+    width: fit-content;
+    text-align: left;
+    transition: 0.3s;
+}
+.product-details .buy-text {
+    display: none;
+}
+.product-details .btn-primary:hover {
+    cursor: pointer;
+}
+.product-details .btn-primary:hover .buy-text {
+    animation: fadeIn; /* referring directly to the animation's @keyframe declaration */
+    animation-duration: 0.3s;
+    display: inline;
+}
+
+
+

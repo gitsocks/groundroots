@@ -1,0 +1,25 @@
+<main class="container">
+    <section class="hero">
+        <h2><b>Discover</b> Home Baked Pastries</h2>
+    </section>
+    <section class="options-bar">
+        <ul class="nav">
+            <li *ngFor="let option of options" (click)="toggleProducts(option.option)" class="nav-item" [ngClass]="{'active' : option.active}">
+                <a class="nav-link" href="#"> {{ option.option }} </a>
+                <div class="active-dot"></div>
+            </li>
+        </ul>
+    </section>
+    <section>
+        <div class="row">
+            <div *ngFor="let product of products" class="col-sm-6 col-md-3 animate__animated animate__fadeInLeft">
+                <app-product [product]="product" (selected)="setSelectedProduct($event)"></app-product>
+            </div>
+        </div>
+    </section>
+    <p *ngIf="selectedProduct"> {{ selectedProduct.description }} </p>
+</main>
+
+
+
+<app-product-details [product]="selectedProduct" (removed)="removeSelectedProduct($event)"></app-product-details>

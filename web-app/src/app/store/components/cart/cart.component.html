@@ -1,0 +1,29 @@
+<main id="cart" class="{{show}}">
+    <div class="cart-inner">
+        <header id="cart-header">
+            <span (click)="toggleCart()" id="close-cart">Close</span>
+            <div class="header-content">
+                <h3>Shopping Cart</h3>
+                <div class="row">
+                    <div class="col">
+                        <p>Total: R375.00</p>
+                    </div>
+                    <div class="col">
+                        <p>Items: 4</p>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <section id="cart-body">
+            <app-cart-item></app-cart-item>
+            <app-cart-item></app-cart-item>
+            <app-cart-item></app-cart-item>
+            <app-cart-item></app-cart-item>
+            <app-cart-item></app-cart-item>
+            <app-cart-item></app-cart-item>
+        </section>
+        <section id="cart-footer">
+            <button routerLink="/checkout" class="btn btn-primary"> Checkout </button>
+        </section>
+    </div>
+</main>

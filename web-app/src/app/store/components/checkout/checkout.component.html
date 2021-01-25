@@ -1,0 +1,123 @@
+<main class="container">
+    <section class="hero">
+        <h2><b>Checkout</b></h2>
+    </section>
+    <section class="options-bar">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="cart">
+                    <div class="cart-inner">
+                        <header id="cart-header">
+                            <div class="header-content">
+                                <h3>Shopping Cart</h3>
+                                <div class="row">
+                                    <div class="col">
+                                        <p>Total: R375.00</p>
+                                    </div>
+                                    <div class="col">
+                                        <p>Items: 4</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </header>
+                        <section class="cart-body">
+                            <app-checkout-item></app-checkout-item>
+                        </section>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <ul class="nav">
+                    <li *ngFor="let option of options" (click)="toggleOptions(option.option)" class="nav-item"
+                        [ngClass]="{'active' : option.active}">
+                        <a class="nav-link"> {{ option.option }} </a>
+                        <div class="active-dot"></div>
+                    </li>
+                </ul>
+                <div class="checkout-form">
+                    <div  *ngIf="selectedOption.option == 'Customer'"  id="customer">
+                        <h2 class="pb-3">Can we have some details:</h2>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input name="first-name" id="first-name" type="text" class="form-control"
+                                        placeholder="First Name">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input name="last-name" id="last-name" type="text" class="form-control"
+                                        placeholder="Last Name">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <input name="email" id="email" type="text" class="form-control" placeholder="Email">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <input name="cellphone" id="cellphone" type="text" class="form-control"
+                                        placeholder="Cellphone">
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-primary"> Next </button>
+                    </div>
+                    <div *ngIf="selectedOption.option == 'Delivery'" id="delivery">
+                        <h2 class="pb-3">Where and how must we deliver:</h2>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input name="street" id="street" type="text" class="form-control"
+                                        placeholder="Street">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input name="City" id="City" type="text" class="form-control" placeholder="City">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <input name="postalcode" id="postalcode" type="text" class="form-control"
+                                        placeholder="Postal Code">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <input name="country" id="country" type="text" class="form-control"
+                                        placeholder="Country">
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary"> Next </button>
+                    </div>
+                    <div *ngIf="selectedOption.option == 'Payment'" id="payment">
+                        <form id="payment-form" method="POST">
+                            <div class="one-liner">
+                                <div id="card-frame">
+                                    <!-- Yoco Inline form will be added here -->
+                                </div>
+                                <button id="pay-button">
+                                    PAY ZAR 24.99
+                                </button>
+                            </div>
+                            <p class="success-payment-message"></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+</main>

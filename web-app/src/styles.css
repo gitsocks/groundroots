@@ -1,1 +1,102 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~animate.css/animate.min';
+:root {
+    --app-background: white;
+    --app-brown: #AB9C81;
+    --app-brown-hover: #b9a98b;
+    --app-dark-green: #637F71;
+    --app-light-green: #7E8F7F;
+    --app-light-gray: #F0F0F0;
+    --app-dark-gray: #616161;
+    --app-dark-gray-hover: #9b9b9b;
+    --app-background-accent: #EFEDE3;
+    --app-primary-font: 'Courier Prime';
+    --app-secondary-font: 'Baloo Tammudu 2';
+}
+
+.bg-light {
+    background-color: white !important;
+}
+
+.container {
+    max-width: 1300px !important;
+}
+
+.material-icons {
+    color: black;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.btn.btn-primary {
+    background-color: var(--app-dark-gray) !important;
+    border-color: var(--app-dark-gray);
+}
+
+.btn.btn-primary:hover {
+    background-color: var(--app-dark-gray-hover) !important;
+    border-color: var(--app-dark-gray-hover);
+    color: black;
+}
+
+.material-icons {
+    vertical-align: -5px;
+}
+
+.display-4,
+h3,
+h2 {
+    font-family: var(--app-secondary-font);
+    font-weight: 300;
+}
+
+b {
+    font-weight: bold !important;
+}
+
+
+.hero {
+    padding: 10rem 0rem 3rem;
+}
+
+.nav .nav-item a {
+    color: black;
+}
+
+.active-dot {
+    width: 5px;
+    height: 5px;
+    background: var(--app-dark-green);
+    margin: auto;
+    border-radius: 50%;
+}
+
+.active-dot {
+    visibility: hidden;
+}
+
+.active .active-dot {
+    visibility: visible;
+}
+
+.options-bar {
+    margin-bottom: 2rem;
+}
+
+.form-control {
+    border: none;
+    background-color: var(--app-light-gray);
+    border-radius: 30px;
+    padding: 1.25rem;
+    color: var(--app-dark-gray);
+}
+
+.form-control:focus {
+    border: none;
+    background-color: var(--app-light-gray);
+    outline: none;
+    box-shadow: none;
+    color: var(--app-dark-gray);
+}

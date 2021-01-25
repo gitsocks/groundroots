@@ -1,4 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, Injectable } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root',
+})
 
 @Component({
   selector: 'app-root',
@@ -6,5 +10,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'web-app';
+  title = 'ground-roots';
+  show = 'hide';
+
+  toggleCart() {
+    if (this.show == 'show') {
+      this.show = 'hide';
+    } else {
+      this.show = 'show';
+    }
+  }
 }
