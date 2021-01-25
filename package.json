@@ -1,0 +1,19 @@
+{
+  "name": "groundroots",
+  "version": "1.0.0",
+  "description": "An online subscription box app. ",
+  "main": "web-app/dist/web-app/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HercoBez/groundroots.git"
+  },
+  "author": "Thinwood",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HercoBez/groundroots/issues"
+  },
+  "homepage": "https://github.com/HercoBez/groundroots#readme"
+}
