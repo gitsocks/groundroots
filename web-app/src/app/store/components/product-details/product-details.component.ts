@@ -11,45 +11,28 @@ export class ProductDetailsComponent implements OnInit, OnChanges {
   @Input() product: Product;
   @Output() removed = new EventEmitter<Product>();
 
-
-  // string
-  currentAnimateClass: string;
+  isOpen: boolean = false;
 
   constructor() { }
 
   ngOnInit() {
-    let details = <HTMLElement>document.getElementById('product-details');
-    this.currentAnimateClass = 'animate__bounceInLeft';
+    
   }
 
   ngOnChanges(changes: SimpleChanges) {
     this.product = changes.product.currentValue;
     if (this.product) {
-      this.toggleClass();
+      this.isOpen = true;
     }
   } 
 
   close() {
     this.product = undefined;
     this.removed.emit(this.product);
-    let details = <HTMLElement>document.getElementById('product-details');
-
-    // this.toggleClass();
+    this.isOpen = false;
   }
 
-  private toggleClass() {
-    let details = <HTMLElement>document.getElementById('product-details');
-    details.classList.toggle('show');
-    if (this.currentAnimateClass == 'animate__bounceInLeft') {
-      details.classList.remove('animate__bounceInLeft');
-      details.classList.add('animate__bounceOutLeft');
-      this.currentAnimateClass = 'animate__bounceOutLeft';
-    } else {
-      details.classList.remove('animate__bounceOutLeft');
-      details.classList.add('animate__bounceInLeft');
-      this.currentAnimateClass = 'animate__bounceInLeft';
-    }
-    
-  }
+  // animations
+  
 
 }
