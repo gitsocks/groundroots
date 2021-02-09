@@ -30,19 +30,35 @@
     font-weight: bold;
 }
 
+
+.btn {
+    border-radius: 30px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
 .btn.btn-primary {
-    background-color: var(--app-dark-gray) !important;
-    border-color: var(--app-dark-gray);
+    background-color: var(--app-brown) !important;
+    border-color: var(--app-brown);
 }
 
 .btn.btn-primary:hover {
-    background-color: var(--app-dark-gray-hover) !important;
-    border-color: var(--app-dark-gray-hover);
-    color: black;
+    background-color: var(--app-brown) !important;
+    border-color: var(--app-brown);
 }
 
 .material-icons {
     vertical-align: -5px;
+}
+
+.form-check-input:checked {
+    background-color: var(--app-brown) !important;
+    border-color: var(--app-brown) !important;
+}
+
+.form-check-input:focus {
+    box-shadow: none !important;
+    color: var(--app-brown) !important;
 }
 
 .display-4,

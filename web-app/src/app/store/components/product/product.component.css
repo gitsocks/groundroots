@@ -69,36 +69,10 @@
 }
 
 .product:hover {
-    z-index: 120 !important;
-    width: 400px;
-    height: 300px;
     cursor: pointer;
     box-shadow: 2px 2px 6px #acacac;
-    transform: translateY(-5px);
-    margin-top: 1rem;
 }
 
-.product:hover .product-image {
-    animation-name: moveImage;
-    animation-duration: 0.3s;
-    left: -80px;
-}
-
-.product:hover .product-content {
-    top: 50px;
-}
-
-.product:hover .product-details {
-    animation: fadeIn; /* referring directly to the animation's @keyframe declaration */
-    animation-duration: 2s;
-    display: block;
-}
-
-.product:hover .product-details .btn-primary {
-    width: fit-content;
-    text-align: left;
-    transition: 0.3s;
-}
 .product-details .buy-text {
     display: none;
 }
