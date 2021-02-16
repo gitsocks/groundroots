@@ -1,0 +1,15 @@
+.register {
+    background-color: white;
+    border-radius: 30px;
+    width: 650px;
+    margin: auto;
+    margin-top: 15%;
+}
+
+.hint {
+    color: gray;
+}
+.hint:hover {
+    cursor: pointer;
+    color: rgb(100, 100, 100);
+}

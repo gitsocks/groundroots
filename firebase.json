@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "web-app/dist/web-app",
+    "public": "groundroots-web/dist/groundroots-web",
     "ignore": [
       "firebase.json",
       "**/.*",

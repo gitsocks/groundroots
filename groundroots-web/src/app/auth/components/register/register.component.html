@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="register p-5">
+        <h1> ☕️ Welcome to Ground Roots! </h1>
+        <p> You can register a new account here. </p>
+        <div class="form">
+            <div class="form-group mt-2">
+                <label for="first-name"> ☝️ First Name </label>
+                <input [(ngModel)]="user.firstName" type="text" class="form-control" name="first-name" id="first-name">
+            </div>
+            <div class="form-group mt-2">
+                <label for="last-name"> ✌️ Last Name </label>
+                <input [(ngModel)]="user.lastName" type="text" class="form-control" name="last-name" id="last-name">
+            </div>
+            <div class="form-group mt-2">
+                <label for="email"> ✉️ Email Address </label>
+                <input [(ngModel)]="user.email" type="text" class="form-control" name="email" id="email">
+            </div>
+            <div class="form-group mt-2">
+                <label for="password"> 🔒 Password </label>
+                <input [(ngModel)]="user.password" type="password" class="form-control" name="password" id="password">
+            </div>
+            <div class="d-flex flex-row justify-content-between mt-3">
+                <button (click)="register()" class="btn btn-primary mt-2"> 🙌 Register </button>
+                <button (click)="registerWithGoogle()" class="btn btn-primary mt-2"> 🔥 Google </button>
+            </div>
+            <div class="hint mt-2"> 👉 <a routerLink="/login"> Login here ... </a></div>
+        </div>
+    </div>
+</div>
