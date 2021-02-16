@@ -8,6 +8,7 @@ import { environment } from 'src/environments/environment';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AuthModule } from './auth/auth.module';
 import { FormsModule } from '@angular/forms';
+import { StoreModule } from './store/store.module';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { FormsModule } from '@angular/forms';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     FormsModule,
-    AuthModule
+    AuthModule,
+    StoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]

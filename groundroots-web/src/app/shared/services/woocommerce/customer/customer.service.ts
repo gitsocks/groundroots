@@ -11,15 +11,15 @@ export class CustomerService {
     private wc: WoocommerceService
   ) { }
 
-  getCustomers() {
+  getCustomers(): Promise<any> {
     return this.wc.get('customers');
   }
 
-  getCustomer(user: User) {
+  getCustomer(user: User): Promise<any> {
     return this.wc.get(`customers/${user.id}`);
   }
 
-  createCustomer(customer: User) {
+  createCustomer(customer: User): Promise<any> {
     return this.wc.post('customers', customer);
   }
 
