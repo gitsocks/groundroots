@@ -1,4 +1,11 @@
-import { DatePipe } from "@angular/common";
+import { Attribute } from "../attribute/attribute.model";
+import { Category } from "../category/category.model";
+import { DefaultAttribute } from "../default-attribute/default-attribute.model";
+import { Dimensions } from "../dimensions/dimensions.model";
+import { Download } from "../download/download.model";
+import { Image } from "../image/image.model";
+import { MetaData } from "../meta-data/meta-data.model";
+import { Tag } from "../tag/tag.model";
 
 export interface WooCommerceProduct {
     id: number;
@@ -27,7 +34,7 @@ export interface WooCommerceProduct {
     total_sales: number;
     virtual: boolean;
     downloadable: boolean;
-    // TODO: Add downloads
+    downloads: Download[];
     download_limit: number;
     download_expiry: number;
     external_url: string;
@@ -42,7 +49,7 @@ export interface WooCommerceProduct {
     backordered: boolean;
     sold_individually: boolean;
     weight: string;
-    // TODO: Add dimensions
+    dimensions: Dimensions;
     shipping_required: boolean;
     shipping_taxable: boolean;
     shipping_class: string;
@@ -50,18 +57,18 @@ export interface WooCommerceProduct {
     reviews_allowed: boolean;
     average_rating: string;
     rating_count: number;
-    related_ids: [];
-    upsell_ids: [];
-    cross_sell_ids: [];
+    related_ids: any[];
+    upsell_ids: any[];
+    cross_sell_ids: any[];
     parent_id: number;
     purchase_note: string;
-    // TODO: Add categories
-    // TODO: Add tags
-    // TODO: Add images
-    // TODO: Add attributes
-    // TODO: Add default attributes
-    variations: [];
-    grouped_products: [];
+    categories: Category[];
+    tags: Tag[];
+    images: Image[];
+    attributes: Attribute[];
+    default_attributes: DefaultAttribute[];
+    variations: any[];
+    grouped_products: any[];
     menu_order: number;
-    // TODO: Add meta data
+    meta_data: MetaData[];
 }
