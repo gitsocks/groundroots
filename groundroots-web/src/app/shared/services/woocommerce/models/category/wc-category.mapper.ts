@@ -1,6 +1,5 @@
 import { Injectable } from "@angular/core";
 import { Category } from "src/app/shared/models/product/category.model";
-import { Product } from "src/app/shared/models/product/product.model";
 import { WcCategory } from "./wc-category.model";
 
 @Injectable({
