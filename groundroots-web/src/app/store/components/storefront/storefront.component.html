@@ -1,5 +1,13 @@
-<ul class="list-group">
-    <li *ngFor="let product of products" class="list-group-item"><a (click)="selectProduct(product)"> {{ product.name }} </a></li>
-</ul>
+<div>
+   <button (click)="changeFilter(Filter.coffeeShop)"> Coffee Shop </button>
+   <button (click)="changeFilter(Filter.pastries)"> Pastries </button>
+</div>
 
-<app-coffee-beans [coffeeBeans]="selectedProduct">  </app-coffee-beans>
+<div class="p-5">
+    <ul class="list-group">
+        <li *ngFor="let product of products" class="list-group-item"><a (click)="selectProduct(product)"> {{ product.name }} </a></li>
+    </ul>
+</div>
+
+<app-coffee-beans *ngIf="filter == Filter.coffeeShop" [coffeeBeans]="selectedProduct"></app-coffee-beans>
+<app-pastry *ngIf="filter == Filter.pastries" [pastry]="selectedProduct"></app-pastry>

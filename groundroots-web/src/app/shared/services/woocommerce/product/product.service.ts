@@ -7,6 +7,9 @@ import { WoocommerceService } from '../woocommerce.service';
 
 export class ProductService {
 
+  coffeeBeansId = 32;
+  pastriesId = 38;
+
   constructor(
     private wc: WoocommerceService
   ) { }
@@ -16,7 +19,11 @@ export class ProductService {
   }
 
   getCoffeeBeans() {
-    return this.wc.get('products?category=32');
+    return this.wc.get(`products?category=${this.coffeeBeansId}`);
+  }
+
+  getPastries() {
+    return this.wc.get(`products?category=${this.pastriesId}`);
   }
 
   getProductVariants(id: number) {
