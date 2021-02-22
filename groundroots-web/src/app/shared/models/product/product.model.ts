@@ -1,3 +1,4 @@
+import { Category } from "./category.model";
 import { ProductVariant } from "./product-variant.model";
 
 export interface Product {
@@ -6,5 +7,6 @@ export interface Product {
     shortDescription: string;
     description: string;
     price: number;
-    variants: ProductVariant[]
+    variants: ProductVariant[];
+    categories: Category[];
 }
