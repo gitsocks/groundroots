@@ -1,5 +1,5 @@
 export interface WcCategory {
     id: number;
     name: string;
-    slug: string;
+    slug?: string;
 }
