@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductService } from 'src/app/shared/services/woocommerce/product/product.service';
+import { ProductFetcher } from 'src/app/shared/logic-services/products/product.fetcher';
+import { Product } from 'src/app/shared/models/product/product.model';
 
 @Component({
   selector: 'app-storefront',
@@ -8,9 +9,25 @@ import { ProductService } from 'src/app/shared/services/woocommerce/product/prod
 })
 export class StorefrontComponent implements OnInit {
 
+  products: Product[] = [];
+  selectedProduct: Product;
+
   constructor(
-    private productService: ProductService
+    private productFetcher: ProductFetcher
   ) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.fetchProducts();
+  }
+
+  fetchProducts() {
+    this.productFetcher.fetchCoffeeBeans().then(products => {
+      this.products = products;
+      console.log(products);
+    });
+  }
+
+  selectProduct(product: Product) {
+    this.selectedProduct = product;
+  }
 }
