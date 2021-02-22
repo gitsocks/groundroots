@@ -16,7 +16,7 @@ export class RegisterComponent implements OnInit {
   constructor(
     private router: Router,
     private auth: AuthService,
-    private customerService: CustomerService
+    // private customerService: CustomerService
   ) { }
 
   ngOnInit() {
@@ -27,20 +27,20 @@ export class RegisterComponent implements OnInit {
     this.user = { email: "", password: "" };
   }
 
-  register() {
-    this.auth.register(this.user.email, this.user.password).then(response => {
-      this.user.uid = response.user.uid;
-      this.customerService.createCustomer(this.user).then(response => {
-        this.user.id = response.data.id;
-        console.info(response);
-      }).catch(error => {
-        console.error(error);
-      })
-      console.info(response);
-    }).catch(error => {
-      console.error(error);
-    });
-  }
+  // register() {
+  //   this.auth.register(this.user.email, this.user.password).then(response => {
+  //     this.user.uid = response.user.uid;
+  //     this.customerService.createCustomer(this.user).then(response => {
+  //       this.user.id = response.data.id;
+  //       console.info(response);
+  //     }).catch(error => {
+  //       console.error(error);
+  //     })
+  //     console.info(response);
+  //   }).catch(error => {
+  //     console.error(error);
+  //   });
+  // }
 
   registerWithGoogle() {
     this.auth.loginWithGoogle().then(response => {

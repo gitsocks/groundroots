@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductService } from 'src/app/shared/services/woocommerce/logic-services/product/product.service';
+import { ProductFetcher } from 'src/app/shared/logic-services/products/product.fetcher';
 
 @Component({
   selector: 'app-storefront',
@@ -9,8 +9,16 @@ import { ProductService } from 'src/app/shared/services/woocommerce/logic-servic
 export class StorefrontComponent implements OnInit {
 
   constructor(
-    private productService: ProductService
+    private productFetcher: ProductFetcher
   ) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.fetchProducts();
+  }
+
+  fetchProducts() {
+    this.productFetcher.fetchProducts().then(products => {
+      console.log(products);
+    })
+  }
 }

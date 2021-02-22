@@ -30,4 +30,14 @@ export class WcProductMapper {
         return  product;
     }
 
+    toProducts(wcProducts: WcProduct[]): Product[] {
+        console.log(wcProducts);
+        let products: Product[] = [];
+        for (let i = 0; i < wcProducts.length; i++) {
+            const wcProduct = wcProducts[i];
+            products.push(this.toProduct(wcProduct));
+        }
+        return products;
+    }
+
 }
