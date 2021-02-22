@@ -9,8 +9,8 @@ import { Product } from 'src/app/shared/models/product/product.model';
 })
 export class StorefrontComponent implements OnInit {
 
-  private products: Product[] = [];
-  private selectedProduct: Product;
+  products: Product[] = [];
+  selectedProduct: Product;
 
   constructor(
     private productFetcher: ProductFetcher
@@ -21,8 +21,9 @@ export class StorefrontComponent implements OnInit {
   }
 
   fetchProducts() {
-    this.productFetcher.fetchProducts().then(products => {
+    this.productFetcher.fetchCoffeeBeans().then(products => {
       this.products = products;
+      console.log(products);
     });
   }
 

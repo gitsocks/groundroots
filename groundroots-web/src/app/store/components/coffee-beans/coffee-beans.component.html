@@ -1,0 +1,23 @@
+<div *ngIf="coffeeBeans">
+
+    <h1> {{ coffeeBeans.name }} </h1>
+    <p> {{ coffeeBeans.description }} </p>
+
+    <div>
+        <div>
+            <input type="checkbox" name="pre-ground" id="pre-ground" (change)="coffeeBeans.preGround == 'Yes' ? coffeeBeans.preGround = 'No' : coffeeBeans.preGround = 'Yes'">
+            <label for="pre-ground"> Pre-Ground </label>     
+        </div>
+    
+        <div>
+            <input type="radio" name="size" id="size-250g" value="250g" [(ngModel)]="coffeeBeans.size">
+            <label for="size"> 250g </label>
+            <input type="radio" name="size" id="size-1kg" value="1 kg" [(ngModel)]="coffeeBeans.size">
+            <label for="size"> 1kg </label>
+        </div>
+    
+        <div>
+            <button (click)="addToBox()"> Add To Box </button>
+        </div>  
+    </div>   
+</div>

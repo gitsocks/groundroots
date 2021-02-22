@@ -1,4 +1,5 @@
 import { Injectable } from "@angular/core";
+import { CoffeeBeans } from "src/app/shared/models/product/coffee.model";
 import { Product } from "src/app/shared/models/product/product.model";
 import { WcAttributeMapper } from "../attribute/wc-attribute.mapper";
 import { WcCategoryMapper } from "../category/wc-category.mapper";
@@ -31,7 +32,6 @@ export class WcProductMapper {
     }
 
     toProducts(wcProducts: WcProduct[]): Product[] {
-        console.log(wcProducts);
         let products: Product[] = [];
         wcProducts.forEach(wcProduct => {
             products.push(this.toProduct(wcProduct));

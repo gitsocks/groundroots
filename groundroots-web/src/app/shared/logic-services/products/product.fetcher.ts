@@ -30,6 +30,17 @@ export class ProductFetcher {
         });
     }
 
+    fetchCoffeeBeans(): Promise<Product[]> {
+        return new Promise<Product[]> ((resolve, reject) => {
+            this.productService.getCoffeeBeans().then((data) => {
+                const wcProducts: WcProduct[] = data['data'];
+                resolve(this.wcProductMapper.toProducts(wcProducts));
+            }).catch(error => {               
+                reject(error);
+            })
+        });
+    }
+
     fetchProductVariations(id: number): Promise<ProductVariant[]> {
         return new Promise<ProductVariant[]> ((resolve, reject) => {
             this.productService.getProductVariants(id).then((data) => {

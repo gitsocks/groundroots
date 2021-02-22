@@ -15,6 +15,10 @@ export class ProductService {
     return this.wc.get('products');
   }
 
+  getCoffeeBeans() {
+    return this.wc.get('products?category=32');
+  }
+
   getProductVariants(id: number) {
     return this.wc.get(`products/${id}/variations`);
   }
