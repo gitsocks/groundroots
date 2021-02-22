@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from 'src/app/shared/models/user/user.model';
-import { CustomerService } from 'src/app/shared/services/woocommerce/customer/customer.service';
+import { CustomerService } from 'src/app/shared/services/woocommerce/logic-services/customer/customer.service';
 import { AuthService } from '../../services/auth.service';
 
 @Component({

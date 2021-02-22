@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductService } from 'src/app/shared/services/woocommerce/product/product.service';
+import { ProductService } from 'src/app/shared/services/woocommerce/logic-services/product/product.service';
 
 @Component({
   selector: 'app-storefront',
