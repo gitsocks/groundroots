@@ -1,4 +1,4 @@
-export interface Image {
+export interface WcImage {
     id: number;
     date_created: Date;
     date_created_gmt: Date;
