@@ -15,5 +15,9 @@ export class ProductService {
     return this.wc.get('products');
   }
 
+  getProductVariants(id: number) {
+    return this.wc.get(`products/${id}/variations`);
+  }
+
 }
 

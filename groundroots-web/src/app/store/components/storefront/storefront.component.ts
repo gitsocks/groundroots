@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductFetcher } from 'src/app/shared/logic-services/products/product.fetcher';
+import { Product } from 'src/app/shared/models/product/product.model';
 
 @Component({
   selector: 'app-storefront',
@@ -7,6 +8,9 @@ import { ProductFetcher } from 'src/app/shared/logic-services/products/product.f
   styleUrls: ['./storefront.component.css']
 })
 export class StorefrontComponent implements OnInit {
+
+  private products: Product[] = [];
+  private selectedProduct: Product;
 
   constructor(
     private productFetcher: ProductFetcher
@@ -18,7 +22,11 @@ export class StorefrontComponent implements OnInit {
 
   fetchProducts() {
     this.productFetcher.fetchProducts().then(products => {
-      console.log(products);
-    })
+      this.products = products;
+    });
+  }
+
+  selectProduct(product: Product) {
+    this.selectedProduct = product;
   }
 }
