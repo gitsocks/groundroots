@@ -4,6 +4,6 @@ export interface ProductVariant {
     id: number;
     price: number;
     stockQuantity: number;
-    weight: number;
+    weight: string;
     attributes: ProductVariantAttribute[]
 }
