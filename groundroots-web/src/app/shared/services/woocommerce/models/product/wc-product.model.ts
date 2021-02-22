@@ -7,7 +7,7 @@ import { WcImage } from "../image/wc-image.model";
 import { WcMetaData } from "../meta-data/wc-meta-data.model";
 import { WcTag } from "../tag/wc-tag.model";
 
-export interface WooCommerceProduct {
+export interface WcProduct {
     id: number;
     name: string;
     slug: string;

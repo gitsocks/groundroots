@@ -33,5 +33,21 @@ export class WcProductVariantMapper {
         }
         return wcProductVariant;
     }
+
+    toProductVariants(wcProductVariants: WcProductVariant[]): ProductVariant[] {
+        let productVariants: ProductVariant[] = [];
+        wcProductVariants.forEach(wcProductVariant => {
+            productVariants.push(this.toProductVariant(wcProductVariant));
+        });
+        return productVariants;
+    }
+
+    toWcProductVariants(productVariants: ProductVariant[]): WcProductVariant[] {
+        let  wcProductVariants: WcProductVariant[] = [];
+        productVariants.forEach(productVariant =>  {
+            wcProductVariants.push(this.toWcProductVariant(productVariant));
+        });
+        return wcProductVariants;
+    }
  
 }

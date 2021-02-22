@@ -7,8 +7,8 @@ export interface Product {
     name: string;
     shortDescription: string;
     description: string;
-    price: number;
+    price: string;
     attributes: ProductAtrribute[];
-    variants: ProductVariant[];
+    variants?: ProductVariant[];
     categories: Category[];
 }
