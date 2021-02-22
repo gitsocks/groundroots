@@ -1,11 +1,11 @@
-import { Attribute } from "../attribute/attribute.model";
-import { Category } from "../category/category.model";
-import { DefaultAttribute } from "../default-attribute/default-attribute.model";
-import { Dimensions } from "../dimensions/dimensions.model";
-import { Download } from "../download/download.model";
-import { Image } from "../image/image.model";
-import { MetaData } from "../meta-data/meta-data.model";
-import { Tag } from "../tag/tag.model";
+import { WcAttribute } from "../attribute/wc-attribute.model";
+import { WcCategory } from "../category/wc-category.model";
+import { WcDefaultAttribute } from "../default-attribute/wc-default-attribute.model";
+import { WcDimensions } from "../dimensions/wc-dimensions.model";
+import { WcDownload } from "../download/wc-download.model";
+import { WcImage } from "../image/wc-image.model";
+import { WcMetaData } from "../meta-data/wc-meta-data.model";
+import { WcTag } from "../tag/wc-tag.model";
 
 export interface WooCommerceProduct {
     id: number;
@@ -34,7 +34,7 @@ export interface WooCommerceProduct {
     total_sales: number;
     virtual: boolean;
     downloadable: boolean;
-    downloads: Download[];
+    downloads: WcDownload[];
     download_limit: number;
     download_expiry: number;
     external_url: string;
@@ -49,7 +49,7 @@ export interface WooCommerceProduct {
     backordered: boolean;
     sold_individually: boolean;
     weight: string;
-    dimensions: Dimensions;
+    dimensions: WcDimensions;
     shipping_required: boolean;
     shipping_taxable: boolean;
     shipping_class: string;
@@ -62,13 +62,13 @@ export interface WooCommerceProduct {
     cross_sell_ids: any[];
     parent_id: number;
     purchase_note: string;
-    categories: Category[];
-    tags: Tag[];
-    images: Image[];
-    attributes: Attribute[];
-    default_attributes: DefaultAttribute[];
+    categories: WcCategory[];
+    tags: WcTag[];
+    images: WcImage[];
+    attributes: WcAttribute[];
+    default_attributes: WcDefaultAttribute[];
     variations: any[];
     grouped_products: any[];
     menu_order: number;
-    meta_data: MetaData[];
+    meta_data: WcMetaData[];
 }

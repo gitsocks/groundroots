@@ -1,0 +1,47 @@
+import { WcDimensions } from "../dimensions/wc-dimensions.model";
+import { WcDownload } from "../download/wc-download.model";
+import { WcImage } from "../image/wc-image.model";
+import { WcMetaData } from "../meta-data/wc-meta-data.model";
+import { WcProductVariantAttribute } from "../product-variant-attribute/wc-product-variant-attribute.model";
+
+export interface WcProductVariant {
+    id: number;
+    date_created: Date;
+    date_created_gmt: Date;
+    date_modified: Date;
+    date_modified_gmt: Date;
+    description: string;
+    permalink: string;
+    sku: string;
+    price: number;
+    regular_price: number;
+    sale_price: number;
+    date_on_sale_from: Date;
+    date_on_sale_from_gmt: Date;
+    date_on_sale_to: Date;
+    date_on_sale_to_gmt: Date;
+    on_sale: boolean;
+    status: string;
+    purchasable:  boolean;
+    virtual: boolean;
+    downloadable: boolean;
+    downloads: WcDownload[];
+    download_limit: number;
+    download_expiry: number;
+    tax_status: string;
+    tax_class: string;
+    manage_stock: boolean;
+    stock_quantity: number;
+    stock_status: string;
+    backorders: string;
+    backorders_allowed: boolean;
+    backordered: boolean;
+    weight: string;
+    dimensions: WcDimensions;
+    shipping_class: string;
+    shipping_class_id: string;
+    image: WcImage;
+    attributes: WcProductVariantAttribute[];
+    menu_order: number;
+    meta_data: WcMetaData[];
+}

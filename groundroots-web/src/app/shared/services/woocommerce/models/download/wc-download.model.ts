@@ -1,4 +1,4 @@
-export interface Download {
+export interface WcDownload {
     id: string;
     name: string;
     file: string;

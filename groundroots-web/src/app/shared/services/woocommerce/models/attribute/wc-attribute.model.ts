@@ -1,4 +1,4 @@
-export class Attribute {
+export class WcAttribute {
     id: number;
     name: string;
     position: number;
