@@ -2,10 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ProductFetcher } from 'src/app/shared/logic-services/products/product.fetcher';
 import { Product } from 'src/app/shared/models/product/product.model';
-
-enum Filter {
-  coffeeShop, pastries
-}
+import { Filter } from 'src/app/shared/enums/filter.enum';
 
 @Component({
   selector: 'app-storefront',

@@ -1,9 +1,9 @@
 <div>
-   <button (click)="changeFilter(Filter.coffeeShop)"> Coffee Shop </button>
-   <button (click)="changeFilter(Filter.pastries)"> Pastries </button>
+   <button class="btn btn-primary" (click)="changeFilter(Filter.coffeeShop)"> Coffee Shop </button>
+   <button class="btn btn-primary ms-3" (click)="changeFilter(Filter.pastries)"> Pastries </button>
 </div>
 
-<div class="p-5">
+<div class="mt-5">
     <ul class="list-group">
         <li *ngFor="let product of products" class="list-group-item"><a (click)="selectProduct(product)"> {{ product.name }} </a></li>
     </ul>

@@ -24,7 +24,7 @@ export class CoffeeBeansComponent implements OnInit, OnChanges {
   }
 
   ngOnInit() {
-   
+
   }
 
   getProductVariations() {
