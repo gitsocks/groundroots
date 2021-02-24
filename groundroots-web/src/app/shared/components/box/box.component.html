@@ -1,1 +1,15 @@
-<p>box works!</p>
+<header>
+    <h1> Box </h1>
+</header>
+<section>
+    <div *ngIf="localBox">
+        <div *ngIf="localBox.items" class="mt-5">
+            <ul class="list-group">
+                <li *ngFor="let item of localBox.items" class="list-group-item d-flex justify-content-between"> 
+                    <p> {{ item.product.name }} | {{ item.variant.attributes[0].option }}| {{ item.variant.attributes[1].option }} </p>
+                    <a (click)="removeItem(item)"> Remove </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>

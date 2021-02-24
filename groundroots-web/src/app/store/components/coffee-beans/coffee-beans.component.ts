@@ -1,5 +1,5 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
-import { ItemAlreadyInBoxError } from 'src/app/shared/exceptions/ItemAlreadyInBoxError/item-already-in-box.error';
+import { ItemAlreadyInBoxError } from 'src/app/shared/exceptions/local-box/item-already-in-box.error';
 import { ProductFetcher } from 'src/app/shared/logic-services/products/product.fetcher';
 import { CoffeeBeans } from 'src/app/shared/models/product/coffee.model';
 import { SubscriptionBoxItem } from 'src/app/shared/models/subscription-box-item/subscription-box-item.model';
@@ -44,8 +44,8 @@ export class CoffeeBeansComponent implements OnInit, OnChanges {
     const variant = optionalVariants.filter(variant => variant.attributes.find(attribute => attribute.option == this.coffeeBeans.preGround))[0];
     const subscriptionBoxItem: SubscriptionBoxItem = { product: this.coffeeBeans, variant: variant, quantity: 1 };
     try {
-      this.localBoxService.addItem(subscriptionBoxItem);
-    } catch (inBoxError: any) {
+      this.localBoxService.add(subscriptionBoxItem);
+    } catch (inBoxError) {
       console.error(inBoxError.message);
     }
   }
