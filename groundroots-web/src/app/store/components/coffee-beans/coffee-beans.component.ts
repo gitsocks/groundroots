@@ -24,7 +24,7 @@ export class CoffeeBeansComponent implements OnInit, OnChanges {
   }
 
   ngOnInit() {
-   
+
   }
 
   getProductVariations() {
@@ -38,6 +38,7 @@ export class CoffeeBeansComponent implements OnInit, OnChanges {
   addToBox() {
     const optionalVariants = this.coffeeBeans.variants.filter(variant => variant.attributes.find(attribute => attribute.option == this.coffeeBeans.size));
     const variant = optionalVariants.filter(variant => variant.attributes.find(attribute => attribute.option == this.coffeeBeans.preGround));
+    console.log(variant)
   }
 
   togglePreGround() {
