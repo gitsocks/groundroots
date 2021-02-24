@@ -9,5 +9,4 @@
     </ul>
 </div>
 
-<app-coffee-beans *ngIf="filter == Filter.coffeeShop" [coffeeBeans]="selectedProduct"></app-coffee-beans>
-<app-pastry *ngIf="filter == Filter.pastries" [pastry]="selectedProduct"></app-pastry>
+<app-product [filter]="filter" [product]="selectedProduct"></app-product>

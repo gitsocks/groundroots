@@ -20,4 +20,6 @@ export class PastryComponent implements OnInit, OnChanges {
 
   }
 
+  addToBox() {}
+
 }

@@ -1,1 +1,4 @@
-<p>product works!</p>
+<section>
+    <app-coffee-beans *ngIf="filter == Filter.coffeeShop" [coffeeBeans]="product"></app-coffee-beans>
+    <app-pastry *ngIf="filter == Filter.pastries" [pastry]="product"></app-pastry>
+</section>
