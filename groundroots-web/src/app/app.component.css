@@ -1,0 +1,38 @@
+main {
+    padding: 4rem;
+}
+
+mat-card {
+    border-radius: 30px;
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    flex: 1;
+}
+
+.coffee {
+    min-width: 180px;
+    height: 180px;
+    position: relative;
+    margin-top: 50px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+.coffee img {
+    position: absolute;
+    width: 120px;
+    top: -40px;
+    right: 10px;
+}
+.coffee mat-card-content {
+    position: absolute;
+    bottom: 20px;
+}
+
+.coffee mat-card-content p {
+    margin-bottom: 0;
+}
+
