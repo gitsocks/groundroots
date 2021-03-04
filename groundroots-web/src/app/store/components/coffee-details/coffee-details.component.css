@@ -1,0 +1,37 @@
+.coffee-details-wrapper {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 20%;
+    background: rgb(75, 155, 124);
+    border-radius: 30px 30px 0px 0px;
+    padding: 4rem;
+}
+
+.coffee-details {
+    width: 100%;
+    height: 100%;
+}
+
+.coffee-details .coffee-details-img,
+.coffee-details .coffee-details-content {
+    width: 50%;
+}
+.coffee-details .coffee-details-img{
+    text-align: center;
+}
+.coffee-details .coffee-details-img img {
+    width: 300px;
+}
+
+.coffee-details 
+.coffee-details-content 
+.coffee-details-content-box {
+    height: 300px;
+    width: 100%;
+}
+
+.coffee-details-content-box p {
+    max-width: 400px;
+}

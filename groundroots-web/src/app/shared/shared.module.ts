@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MaterialModule } from '../material/material.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -8,11 +9,13 @@ import { MaterialModule } from '../material/material.module';
   declarations: [],
   imports: [
     CommonModule,
-    MaterialModule
+    MaterialModule,
+    BrowserAnimationsModule
   ],
   exports: [
     CommonModule,
-    MaterialModule
+    MaterialModule,
+    BrowserAnimationsModule
   ]
 })
 export class SharedModule { }
