@@ -115,8 +115,13 @@
               "devServerTarget": "groundroots-web:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
-    }},
+    }
+  },
   "defaultProject": "groundroots-web"
 }

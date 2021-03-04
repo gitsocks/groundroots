@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "bullion-bars": {
+      "hosting": {
+        "groundroots-web": [
+          "bullion-bars"
+        ]
+      }
+    }
+  }
+}
