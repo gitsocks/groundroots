@@ -3,16 +3,21 @@ import { CommonModule } from '@angular/common';
 import { RegisterComponent } from './components/register/register.component';
 import { RouterModule, Routes } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
-  { path: 'register', component: RegisterComponent }
+  { path: '', redirectTo: '/auth/login', pathMatch: 'full' },
+  { path: 'register', component: RegisterComponent },
+  { path: 'login', component: LoginComponent }
 ]
 
 @NgModule({
-  declarations: [RegisterComponent],
+  declarations: [RegisterComponent, LoginComponent],
   imports: [
     SharedModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    AngularFireAuthModule
   ]
 })
 
