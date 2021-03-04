@@ -1,9 +1,9 @@
 {
   "targets": {
-    "bullion-bars": {
+    "ground-roots": {
       "hosting": {
         "groundroots-web": [
-          "bullion-bars"
+          "ground-roots"
         ]
       }
     }
