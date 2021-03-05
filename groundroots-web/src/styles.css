@@ -1,4 +1,71 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+h1 {
+    font-size: 42px;
+}
+
+h2 {
+    font-size: 36px;
+}
+
+h4 {
+    font-size: 24px;
+}
+
+a:hover {
+    cursor: pointer;
+}
+a:hover span {
+    transform: translateX("5px") !important;
+}
+
+/* Buttons */
+
+button.btn {
+    width: 100% !important;
+    padding: 8px !important;
+    border-radius: 30px !important;
+}
+
+button.btn:hover {
+    cursor: pointer;
+}
+
+button.btn:focus {
+    outline: none;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex.align-center {
+    align-items: center;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.mat-form-field {
+    border-radius: 30px;
+}
+
+.mat-form-field-flex {
+    border-radius: 30px !important;
+    padding-left: 30px !important;
+}
+
+.mat-form-field-underline {
+    display: none;
+}

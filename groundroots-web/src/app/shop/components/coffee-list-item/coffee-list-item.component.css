@@ -1,0 +1,31 @@
+mat-card {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    border-radius: 30px;
+    background-color: #e5e4cc;
+    transition: 0.3s;
+}
+
+mat-card:hover {
+    transform: translateY(-10px);
+    cursor: pointer;
+}
+
+mat-card img {
+    position: absolute;
+    width: 100px;
+    top: -30px;
+    right: 15px;
+}
+
+mat-card-content {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+}
+
+mat-card-content p {
+    margin-top: 0;
+    margin-bottom: 2px !important;
+}

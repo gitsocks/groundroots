@@ -10,6 +10,10 @@ export class AuthService {
 
   constructor(private authentication: AngularFireAuth) { }
 
+  signInWithEmail(email: string, password: string) {
+    return this.authentication.auth.signInWithEmailAndPassword(email, password);
+  } 
+
   async signUpWithEmailAndPassword(email: string, password: string) {
     const credentials = await this.authentication.auth.createUserWithEmailAndPassword(email, password);
     const user = {
