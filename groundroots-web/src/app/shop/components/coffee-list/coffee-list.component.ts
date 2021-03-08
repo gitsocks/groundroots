@@ -35,5 +35,4 @@ export class CoffeeListComponent implements OnInit {
     this.selectedCoffee = coffee;
   }
 
-
 }

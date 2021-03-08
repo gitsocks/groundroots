@@ -1,25 +1,30 @@
 import { NgModule } from '@angular/core';
-import { MatCardModule } from '@angular/material/card';
-import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import { MatRadioModule } from '@angular/material/radio';
+import { MatInputModule, MatSlideToggleModule } from '@angular/material';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
-import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatCardModule } from '@angular/material/card';
+import { MatRadioModule } from '@angular/material/radio';
 
 @NgModule({
   declarations: [],
   imports: [
-    MatCardModule,
-    MatSlideToggleModule,
-    MatRadioModule,
+    MatFormFieldModule,
+    MatInputModule,
     MatButtonModule,
-    MatBottomSheetModule
+    MatSnackBarModule,
+    MatCardModule,
+    MatRadioModule,
+    MatSlideToggleModule
   ],
   exports: [
-    MatCardModule,
-    MatSlideToggleModule,
-    MatRadioModule,
+    MatFormFieldModule,
+    MatInputModule,
     MatButtonModule,
-    MatBottomSheetModule
+    MatSnackBarModule,
+    MatCardModule,
+    MatRadioModule,
+    MatSlideToggleModule
   ]
 })
 export class MaterialModule { }

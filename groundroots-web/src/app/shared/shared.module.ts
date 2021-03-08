@@ -1,21 +1,21 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
 import { MaterialModule } from '../material/material.module';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-
 
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
-    MaterialModule,
-    BrowserAnimationsModule
+    FormsModule,
+    MaterialModule
   ],
   exports: [
     CommonModule,
-    MaterialModule,
-    BrowserAnimationsModule
+    FormsModule,
+    MaterialModule
   ]
 })
+
 export class SharedModule { }
