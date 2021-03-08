@@ -9,7 +9,7 @@
     ]
   },
   "hosting": {
-    "public": "public",
+    "public": "groundroots-web/dist/groundroots-web",
     "ignore": [
       "firebase.json",
       "**/.*",

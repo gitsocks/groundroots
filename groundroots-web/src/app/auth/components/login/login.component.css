@@ -1,0 +1,39 @@
+.login {
+    height: 100% !important;
+    width: 100% !important;
+}
+
+.form {
+    width: fit-content;
+}
+
+.form-content {
+    width: 400px;
+}
+
+.login-img-section {
+    width: 40%;
+    height: 100%;
+    background-image: url('../../../../assets/images/login/login-background.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.login-form-section {
+    position: relative;
+    width: 60%;
+}
+
+.login-form-section .form {
+    margin: auto;
+}
+
+@media screen and (max-width: 900px) {
+    .login-img-section {
+        display: none;
+    }
+    .login-form-section {
+        width: 100%;
+    }
+}

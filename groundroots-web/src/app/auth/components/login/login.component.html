@@ -1,0 +1,24 @@
+<div class="login flex">
+    <div class="login-img-section"></div>
+    <div class="login-form-section flex align-center">
+        <div class="form">
+            <h1> 🤘 Welcome Back </h1>
+            <p> Please login to continue to the site. </p>
+            <div class="form-content">
+                <div class="email">
+                    <mat-form-field class="full-width" appearance="fill">
+                        <mat-label>Email</mat-label>
+                        <input [(ngModel)]="user.email" type="email" matInput placeholder="Ex. billy@example.com">
+                    </mat-form-field>
+                </div>
+                <div class="password">
+                    <mat-form-field class="full-width" appearance="fill">
+                        <mat-label>Password</mat-label>
+                        <input [(ngModel)]="user.password" type="password" matInput>
+                    </mat-form-field>
+                </div>
+                <button class="btn" (click)="signIn()" mat-raised-button color="primary"> Sign In </button>
+            </div>
+        </div>
+    </div>
+</div>
