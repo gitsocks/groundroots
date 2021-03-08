@@ -1,0 +1,13 @@
+<main>
+    <header>
+        <h1> ☕️ Shop </h1>
+        <p> We have a range of awesome roasteries to add to your box!</p>
+    </header>
+    <section>
+        <div class="flex">
+            <app-coffee-list-item *ngFor="let coffee of coffees" (click)="selectCoffee(coffee)" [coffee]="coffee"></app-coffee-list-item>
+        </div>
+    </section>
+</main>
+
+<app-coffee-details [coffee]="selectedCoffee" (close)="selectCoffee($event)"></app-coffee-details>

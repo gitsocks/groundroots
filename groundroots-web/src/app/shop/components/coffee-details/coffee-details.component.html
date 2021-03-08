@@ -1,0 +1,35 @@
+<div [@openClose]="coffee ? 'open' : 'closed'"  class="coffee-details flex">
+        <div class="coffee-details-img-wrapper flex align-center">
+            <img src="assets/images/vectors/coffee/coffee-bag.svg" alt="">
+        </div>
+        <div *ngIf="coffee" class="coffee-details-content-wrapper flex align-center">
+            <div class="coffee-details-content">
+                <a (click)="closePopup()"> 👈 Back </a>
+                <h2> {{ coffee.name }} </h2>
+                <h4> {{ coffee.roastery }} </h4>
+                <p class="origin"> {{ coffee.blend }} </p>
+                <p class="description">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent gravida convallis ante, a interdum
+                    erat accumsan sit
+                    amet. Vivamus sed nulla posuere, aliquet dolor sed, finibus eros. Vestibulum ante ipsum primis in
+                    faucibus
+                </p>
+                <div class="form">
+                    <div class="size">
+                        <p><b>Size</b></p>
+                        <mat-radio-group (change)="calculatePrice()" aria-label="Size">
+                            <mat-radio-button name="size" ngDefaultControl [(ngModel)]="size" value="1kg">1kg</mat-radio-button>
+                            <mat-radio-button name="size" ngDefaultControl [(ngModel)]="size" value="250g">250g</mat-radio-button>
+                        </mat-radio-group>
+                    </div>
+                    <div class="ground">
+                        <mat-slide-toggle (change)="calculatePrice()" [(ngModel)]="ground"> Ground </mat-slide-toggle>
+                    </div>
+                    <div class="price">
+                        <h2 *ngIf="selectedOption">R {{ selectedOption.price }}</h2>
+                    </div>
+                    <button [disabled]="!selectedOption" mat-raised-button color="primary"> 📦 Add To Box </button>
+                </div>
+            </div>
+        </div>
+    </div>
