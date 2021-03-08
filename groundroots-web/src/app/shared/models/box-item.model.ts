@@ -7,5 +7,6 @@ export interface BoxItem {
     type: string;
     blend: string;
     image: string;
+    quantity: number;
     option: CoffeeOption;
 }

@@ -1,5 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
+
+
 html,
 body {
     height: 100%;
@@ -47,6 +49,10 @@ button.btn:focus {
 
 .flex {
     display: flex;
+}
+
+.flex.justify-content-between {
+    justify-content: space-between;
 }
 
 .flex.align-center {

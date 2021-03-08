@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AccountService } from 'src/app/account/services/account.service';
 import { User } from 'src/app/shared/models/user.model';
 import { AuthService } from '../../services/auth.service';
@@ -12,7 +13,7 @@ export class RegisterComponent implements OnInit {
 
   user: User;
 
-  constructor(private auth: AuthService, private account: AccountService) { }
+  constructor(private auth: AuthService, private account: AccountService, private router: Router) { }
 
   ngOnInit() {
     this.user = {firstName: '', lastName: '', email: '', password: '', cellphone: ''};
@@ -20,7 +21,9 @@ export class RegisterComponent implements OnInit {
 
   async register() {
     const user =  await this.auth.signUpWithEmailAndPassword(this.user.email, this.user.password);
-    const ref = this.account.create(this.user);
-    user.id = (await ref).id;
+    this.user.id = user.id;
+    this.account.create(this.user).then(() => {
+      this.router.navigate(['/shop']);
+    });
   }
 }

@@ -28,7 +28,7 @@
                     <div class="price">
                         <h2 *ngIf="selectedOption">R {{ selectedOption.price }}</h2>
                     </div>
-                    <button [disabled]="!selectedOption" mat-raised-button color="primary"> 📦 Add To Box </button>
+                    <button (click)="addToBox()" [disabled]="!selectedOption" mat-raised-button color="primary"> 📦 Add To Box </button>
                 </div>
             </div>
         </div>

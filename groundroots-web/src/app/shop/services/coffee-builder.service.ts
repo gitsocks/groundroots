@@ -25,7 +25,6 @@ export class CoffeeBuilderService {
   private processOptions(data) {
     const options: CoffeeOption[] = [];
     data.forEach(item => {
-      console.log(item)
       const coffeeOption: CoffeeOption = {
         size: item.size,
         price: Number(item.price),

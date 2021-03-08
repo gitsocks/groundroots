@@ -7,5 +7,5 @@ export interface User {
     email: string;
     cellphone?: string;
     password?: string;
-    addresses?: Address[]
+    address?: Address;
 }

@@ -1,0 +1,10 @@
+main {
+    padding: 5rem;
+}
+section {
+    padding-top: 5rem;
+}
+
+.box-selected-address p {
+    margin-bottom: 0;
+}

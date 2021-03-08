@@ -8,6 +8,10 @@ import {
   transition
 } from '@angular/animations';
 import { CoffeeOption } from 'src/app/shared/models/coffee-option.model';
+import { LocalBoxService } from 'src/app/box/services/local-box.service';
+import { Box } from 'src/app/shared/models/box.model';
+import { BoxItem } from 'src/app/shared/models/box-item.model';
+import { MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-coffee-details',
@@ -43,7 +47,7 @@ export class CoffeeDetailsComponent implements OnInit, OnChanges {
   ground: boolean = false;
   selectedOption: CoffeeOption;
 
-  constructor() { }
+  constructor(private localBoxService: LocalBoxService, private snack: MatSnackBar) { }
 
   ngOnChanges(changes: SimpleChanges): void {
     this.coffee = changes.coffee.currentValue;
@@ -62,7 +66,30 @@ export class CoffeeDetailsComponent implements OnInit, OnChanges {
   }
 
   addToBox() {
-    
+    const localBox = this.localBoxService.getLocalBox();
+    const boxItem = this.generateBoxItem();
+    if (localBox) {
+      const error = this.localBoxService.addBoxItem(boxItem);
+      if (error) this.snack.open(error, "Awesome", { duration: 3000 });
+    } else {
+      const boxItems: BoxItem[] = [boxItem];
+      const box: Box = { items: boxItems };
+      this.localBoxService.create(box);
+    }
+  }
+
+  private generateBoxItem() {
+    const boxItem: BoxItem = {
+      id: this.coffee.id,
+      name: this.coffee.name,
+      blend: this.coffee.blend,
+      roastery: this.coffee.roastery,
+      type: this.coffee.type,
+      image: this.coffee.image,
+      quantity: 1,
+      option: this.selectedOption
+    }
+    return boxItem;
   }
 
 }
