@@ -9,6 +9,7 @@ import { CoffeeService } from '../../services/coffee.service';
   templateUrl: './coffee-list.component.html',
   styleUrls: ['./coffee-list.component.css']
 })
+
 export class CoffeeListComponent implements OnInit {
 
   selectedCoffee: Coffee;

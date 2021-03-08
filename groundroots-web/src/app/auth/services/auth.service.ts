@@ -18,8 +18,6 @@ export class AuthService {
     const credentials = await this.authentication.auth.createUserWithEmailAndPassword(email, password);
     const user = {
       id: credentials.user.uid,
-      firstName: credentials.user.displayName.split(' ')[0],
-      lastName: credentials.user.displayName.split(' ')[1],
       email: credentials.user.email
     }
     return user;
