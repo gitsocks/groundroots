@@ -8,6 +8,7 @@ import { LocalBoxItemComponent } from './components/local-box-item/local-box-ite
 import { RemoveBoxItemComponent } from './components/dialogs/remove-box-item/remove-box-item.component';
 import { ConfirmSubscriptionComponent } from './components/dialogs/confirm-subscription/confirm-subscription.component';
 import { SuccessfulSubscriptionComponent } from './components/successful-subscription/successful-subscription.component';
+import { PaymentComponent } from './components/dialogs/payment/payment.component';
 
 const routes: Routes = [
   { path: '', component: LocalBoxComponent },
@@ -15,7 +16,7 @@ const routes: Routes = [
 ]
 
 @NgModule({
-  declarations: [LocalBoxComponent, BoxItemComponent, LocalBoxItemComponent, RemoveBoxItemComponent, ConfirmSubscriptionComponent, SuccessfulSubscriptionComponent],
+  declarations: [LocalBoxComponent, BoxItemComponent, LocalBoxItemComponent, RemoveBoxItemComponent, ConfirmSubscriptionComponent, SuccessfulSubscriptionComponent, PaymentComponent],
   imports: [
     SharedModule,
     RouterModule.forChild(routes)
