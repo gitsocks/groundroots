@@ -13,6 +13,14 @@ export const environment = {
     messagingSenderId: "367674410585",
     appId: "1:367674410585:web:915231904742265248d348",
     measurementId: "G-8PE0PHFQZN"
+  },
+  payfast: {
+    url: "https://sandbox.payfast.co.za/eng/process",
+    merchant_id: "10000100",
+    merchant_key: "46f0cd694581a",
+    return_url: "http://localhost:4200/box/success",
+    cancel_url: "http://localhost:4200/box/cancel",
+    notify_url: "http://localhost:4200/box/notify"
   }
 };
 

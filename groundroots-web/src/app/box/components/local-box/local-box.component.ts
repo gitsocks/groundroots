@@ -23,9 +23,9 @@ export class LocalBoxComponent implements OnInit {
   box: Box;
 
   boxSizes = [
-    { weight: 0.25, name: "Small", price: "100" },
-    { weight: 0.5, name: "Medium", price: "125" },
-    { weight: 1, name: "Large", price: "150" }
+    { weight: 0.25, name: "Small", price: 100.00 },
+    { weight: 0.5, name: "Medium", price: 125.00 },
+    { weight: 1, name: "Large", price: 150.00 }
   ]
 
   constructor(
@@ -49,11 +49,13 @@ export class LocalBoxComponent implements OnInit {
       this.account.fetch(user.uid).get().subscribe(user => {
         this.user = {
           email: user.data().email,
+          firstName: user.data().firstName,
+          lastName: user.data().lastName,
+          cellphone: user.data().cellphone,
           address: user.data().address
         }
         this.user.id = user.id;
       });
-      
     })
   }
 
@@ -69,7 +71,9 @@ export class LocalBoxComponent implements OnInit {
   }
 
   confirmSubscription() {
-    this.dialog.open(ConfirmSubscriptionComponent).afterClosed().subscribe(confirm => {
+    this.box.size = this.determineSize().name;
+    this.box.price = this.calculateTotal();
+    this.dialog.open(ConfirmSubscriptionComponent, { data: { user: this.user, box: this.box }}).afterClosed().subscribe(confirm => {
       if (confirm) {
         this.boxSerivce.create(this.box).then(() => {
             this.router.navigate(['/box/successful']);
@@ -85,6 +89,7 @@ export class LocalBoxComponent implements OnInit {
     this.localBoxService.getLocalBox().items.forEach(item => {
       total += item.option.price * item.quantity;
     });
+    total += this.determineSize().price;
     return total;
   }
 
