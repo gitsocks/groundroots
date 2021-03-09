@@ -16,11 +16,11 @@ export const environment = {
   },
   payfast: {
     url: "https://sandbox.payfast.co.za/eng/process",
-    merchant_id: "10000100",
-    merchant_key: "46f0cd694581a",
-    return_url: "http://localhost:4200/box/success",
-    cancel_url: "http://localhost:4200/box/cancel",
-    notify_url: "http://localhost:4200/box/notify"
+    merchant_id: "10021945",
+    merchant_key: "1mqknuo6fdkmz",
+    return_url: "https://www.groundroots.co/box/success",
+    cancel_url: "https://www.groundroots.co/box/cancel",
+    notify_url: "https://www.groundroots.co/box/notify"
   }
 };
 

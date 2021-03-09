@@ -1,8 +1,10 @@
 import { Component, Inject, OnInit, ViewChild } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { environment } from 'src/environments/environment';
+import { FormControl, FormGroup, NgForm } from '@angular/forms';
 import * as moment from 'moment';
-import { NgForm } from '@angular/forms';
+import * as md5 from 'md5';
+import { BoxService } from 'src/app/box/services/box.service';
 
 @Component({
   selector: 'app-confirm-subscription',
@@ -11,33 +13,34 @@ import { NgForm } from '@angular/forms';
 })
 export class ConfirmSubscriptionComponent implements OnInit {
 
-  @ViewChild('payfastForm', {static: false}) payfastForm: NgForm;
+  signature: string;
 
   constructor(
     private reference: MatDialogRef<ConfirmSubscriptionComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any
+    @Inject(MAT_DIALOG_DATA) public data: any,
+    private boxService: BoxService
     ) { }
 
   ngOnInit() {
-    console.log(this.data.box);
-    console.log(this.data.user);
+    this.boxService.create(this.data.box).then(reference => {
+      this.data.box.id = reference.id;
+      this.generateSignature();
+    });
   }
 
   nextMonth() {
-    return moment().startOf('month').toDate();
+    return moment().startOf('month').format("yyyy-MM-DD");
   }
 
   continue() {
-    // this.reference.close(true);
-    this.payfastForm.ngSubmit.emit();
   }
 
   environment() {
     return environment;
   }
 
-  submitForm() {
-    this.payfastForm.ngSubmit.emit();
+  generateSignature() {
+
   }
 
 }

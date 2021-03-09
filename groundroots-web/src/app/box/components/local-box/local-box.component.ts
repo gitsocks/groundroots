@@ -74,14 +74,8 @@ export class LocalBoxComponent implements OnInit {
     this.box.size = this.determineSize().name;
     this.box.price = this.calculateTotal();
     this.dialog.open(ConfirmSubscriptionComponent, { data: { user: this.user, box: this.box }}).afterClosed().subscribe(confirm => {
-      if (confirm) {
-        this.boxSerivce.create(this.box).then(() => {
-            this.router.navigate(['/box/successful']);
-        })
-      } else {
-        this.snack.open("👍 Cancelled!", "Thank You", { duration: 3000 });
-      }
-    })
+      if (!confirm) this.snack.open("👍 Cancelled!", "Thank You", { duration: 3000 });
+    });
   }
 
   calculateTotal() {
