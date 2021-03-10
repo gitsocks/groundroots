@@ -1,0 +1,62 @@
+<main>
+    <header>
+        <h1> 📦 Box </h1>
+        <p> Confirm your details and subscribe to a new box! </p>
+    </header>
+    <section *ngIf="box">
+        <div class="row">
+            <div class="col-md-6">
+                <h2 class="mb-5">Box Details</h2>
+                <div class="box-details">
+                    <div class="box-size row">
+                        <div class="col">
+                            <h4>Size:</h4>
+                        </div>
+                        <div class="col text-right">
+                            <h4> {{ box.size }} </h4>
+                        </div>
+                    </div>
+                    <mat-divider class="mb-3 mt-3"></mat-divider>
+                    <div class="box-frequency row">
+                        <div class="col">
+                            <h4>Frequency:</h4>
+                        </div>
+                        <div class="col">
+                            {{ box.frequency }}
+                        </div>
+                    </div>
+                    <mat-divider class="mb-3 mt-3"></mat-divider>
+                    <div class="box-address row">
+                        <div class="col">
+                            <h4>Address:</h4>
+                        </div>
+                        <div class="col">
+                            <div *ngIf="user" class="box-selected-address">
+                                <p> {{ user.address.street }} </p>
+                                <p> {{ user.address.city }}, {{ user.address.postalCode }} </p>
+                                <p> {{ user.address.province }} </p>
+                                <p> {{ user.address.country }} </p>
+                            </div>
+                        </div>
+                    </div>
+                    <mat-divider class="mb-3 mt-3"></mat-divider>
+                    <div class="box-total row">
+                        <div class="col">
+                            <h4>Total:</h4>
+                        </div>
+                        <div class="col">
+                            <h4> {{ box.price | currency:"R" }} </h4>
+                        </div>
+                    </div>
+                </div>
+                <button (click)="cancel()" *ngIf="box.frequency" mat-raised-button color="primary" class="btn mt-5"> Cancel Subscription </button>
+            </div>
+            <div class="col-md-6">
+                <h2 class="mb-5">Box Items</h2>
+                <div class="box-items">
+                    <app-box-item *ngFor="let item of box.items" [box]="item"></app-box-item>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>

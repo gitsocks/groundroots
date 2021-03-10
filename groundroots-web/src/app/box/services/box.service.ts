@@ -13,4 +13,16 @@ export class BoxService {
     return this.firestore.collection('boxes').add(box);
   }
 
+  fetchByUser(id) {
+    return this.firestore.collection<Box>('boxes', ref => ref.where('customerId', '==', id)).valueChanges({ idField: 'id' });
+  }
+
+  fetchById(id) {
+    return this.firestore.collection<Box>('boxes').doc(id);
+  }
+
+  cancel(id) {
+    
+  }
+
 }

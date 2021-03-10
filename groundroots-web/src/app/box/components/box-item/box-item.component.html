@@ -1,1 +1,13 @@
-<p>box-item works!</p>
+<div class="box-item flex">
+    <img src="assets/images/vectors/coffee/coffee-bag.svg" alt="">
+    <div class="box-item-details flex justify-content-between align-center">
+        <div class="box-item-content">
+            <h4> {{ box.name }} x {{ box.quantity }} </h4>
+            <p> {{ box.roastery }} @ {{ box.option.size }} <span *ngIf="box.option.ground"
+                    class="badge bg-primary">Ground</span></p>
+        </div>
+        <div class="box-item-price">
+            <h4> {{ box.option.price | currency:"R" }} </h4>
+        </div>
+    </div>
+</div>

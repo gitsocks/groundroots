@@ -1,0 +1,28 @@
+.box-item {
+    position: relative;
+    margin-bottom: 45px;
+}
+
+.box-item img {
+    position: absolute;
+    width: 65px;
+    top: -30px;
+    left: 5px;
+}
+
+.box-item-content {
+    margin-left: 50px;
+}
+
+.box-item-details {
+    width: 100%;
+    border: 1px solid black;
+    transition: all 0.3s ease-in-out;
+    border-radius: 30px;
+    padding: 15px 30px;
+}
+
+.box-item-details h4,
+.box-item-details p {
+    margin-bottom: 0 !important;
+}
