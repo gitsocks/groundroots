@@ -46,7 +46,7 @@ export class LocalBoxComponent implements OnInit {
 
   getUser() {
     this.auth.getAuthState().subscribe(user => {
-      this.account.fetch(user.uid).get().subscribe(user => {
+      this.account.fetchById(user.uid).get().subscribe(user => {
         this.user = {
           email: user.data().email,
           firstName: user.data().firstName,

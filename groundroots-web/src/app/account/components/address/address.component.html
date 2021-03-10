@@ -3,35 +3,35 @@
         <div class="street">
             <mat-form-field class="w-100" appearance="fill">
                 <mat-label>Street</mat-label>
-                <input matInput>
+                <input [(ngModel)]="user.address.street" matInput>
             </mat-form-field>
         </div>
         <div class="city">
             <mat-form-field class="w-100" appearance="fill">
                 <mat-label>City</mat-label>
-                <input type="text" matInput>
+                <input [(ngModel)]="user.address.city" type="text" matInput>
             </mat-form-field>
         </div>
         <div class="province">
             <mat-form-field class="w-100" appearance="fill">
                 <mat-label>Province</mat-label>
-                <input type="text" matInput>
+                <input [(ngModel)]="user.address.province" type="text" matInput>
             </mat-form-field>
         </div>
         <div class="country">
             <mat-form-field class="w-100" appearance="fill">
                 <mat-label>Country</mat-label>
-                <input type="text" matInput>
+                <input [(ngModel)]="user.address.country" type="text" matInput>
             </mat-form-field>
         </div>
         <div class="postalCode">
             <mat-form-field class="w-100" appearance="fill">
                 <mat-label>Postal Code</mat-label>
-                <input type="text" matInput>
+                <input [(ngModel)]="user.address.postalCode" type="text" matInput>
             </mat-form-field>
         </div>
         <div class="update-button mb-2">
-            <button class="btn" mat-raised-button color="primary">Update Address</button>
+            <button (click)="updateAddress()" class="btn" mat-raised-button color="primary">Update Address</button>
         </div>
     </div>
 </section>

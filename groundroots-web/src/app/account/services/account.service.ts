@@ -9,7 +9,7 @@ export class AccountService {
 
   constructor(private firestore: AngularFirestore) { }
 
-  fetch(uid: string) {
+  fetchById(uid: string) {
     return this.firestore.collection('accounts').doc(uid);
   }
 
@@ -20,5 +20,9 @@ export class AccountService {
       email: user.email,
       cellphone: user.cellphone
     });
+  }
+
+  update(user: User) {
+    return this.firestore.collection('accounts').doc(user.id).update(user);
   }
 }
