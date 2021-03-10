@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { AuthService } from 'src/app/auth/services/auth.service';
 
 @Component({
@@ -8,7 +9,13 @@ import { AuthService } from 'src/app/auth/services/auth.service';
 })
 export class AccountDetailsComponent implements OnInit {
 
-  constructor(private auth: AuthService) { }
+  tab: string = 'profile';
+
+  constructor(private auth: AuthService, private router: Router) {
+    this.router.events.subscribe(event => {
+      if (typeof(event) === NavigationEnd.name) console.log(event);
+    })
+  }
 
   ngOnInit() {
     this.getAuthState();

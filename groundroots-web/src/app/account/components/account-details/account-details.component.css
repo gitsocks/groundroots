@@ -1,0 +1,39 @@
+.account-details-wrapper {
+    height: 100%;
+    position: relative;
+}
+
+.account-details {
+    position: absolute;
+    width: fit-content;
+    top: 15%;
+    right: 0;
+    left: 0;
+    margin: auto;
+}
+.account-tabs {
+    width: 250px;
+    text-align: center;
+}
+
+.account-tabs p {
+    margin-bottom: 2px;
+}
+
+.account-tabs .tab-dot {
+    width: 5px;
+    height: 5px;
+    background-color: greenyellow;
+    margin: auto;
+    border-radius: 50%;
+    display: none;
+}
+
+.account-tabs .tab.active .tab-dot {
+    display: block;
+}
+
+.form {
+    width: 100%;
+}
+

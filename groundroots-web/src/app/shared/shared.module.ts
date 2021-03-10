@@ -3,9 +3,10 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { MaterialModule } from '../material/material.module';
+import { BottomNavigationComponent } from './components/bottom-navigation/bottom-navigation.component';
 
 @NgModule({
-  declarations: [],
+  declarations: [BottomNavigationComponent],
   imports: [
     CommonModule,
     FormsModule,
@@ -16,7 +17,8 @@ import { MaterialModule } from '../material/material.module';
     CommonModule,
     FormsModule,
     MaterialModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BottomNavigationComponent
   ]
 })
 
