@@ -1,18 +1,22 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
-import { FormsModule } from '@angular/forms';
+import { RouterModule, Routes } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { LoginComponent } from './components/login/login.component';
+
+const routes: Routes = [
+  { path: 'register', component: RegisterComponent },
+  { path: 'login', component: LoginComponent }
+]
 
 @NgModule({
-  declarations: [
-    LoginComponent,
-    RegisterComponent
-  ],
+  declarations: [RegisterComponent, LoginComponent],
   imports: [
-    CommonModule,
-    SharedModule
+    SharedModule,
+    RouterModule.forChild(routes),
+    AngularFireAuthModule
   ]
 })
 

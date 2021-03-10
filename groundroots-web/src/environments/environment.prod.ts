@@ -10,11 +10,15 @@ export const environment = {
     appId: "1:367674410585:web:915231904742265248d348",
     measurementId: "G-8PE0PHFQZN"
   },
-  woocommerce: {
-    url: 'https://dev.thinwood.co/groundroots',
-    key: "ck_dc736a590e2c4599a097f5590909fe2cf735f69e",
-    secret: "cs_027bea2ab728ba2225d2d256b5125347b45303fc",
-    version: 'wc/v3',
-    queryStringAuth: true
+  payfast: {
+    // url: "https://www.payfast.co.za/eng/process",
+    // merchant_id: "10000100",
+    // merchant_key: "46f0cd694581a",
+    url: "https://sandbox.payfast.co.za/eng/process",
+    merchant_id: "10021945",
+    merchant_key: "1mqknuo6fdkmz",
+    return_url: "https://ground-roots.web.app/box/success",
+    cancel_url: "https://ground-roots.web.app/box/cancel",
+    notify_url: "https://us-central1-ground-roots.cloudfunctions.net/processPayment"
   }
 };

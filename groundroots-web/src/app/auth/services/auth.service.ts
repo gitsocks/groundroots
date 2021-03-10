@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
-import firebase from 'firebase/app';
+import { User } from 'src/app/shared/models/user.model';
 
 @Injectable({
   providedIn: 'root'
@@ -8,32 +8,27 @@ import firebase from 'firebase/app';
 
 export class AuthService {
 
-  constructor(
-    private auth: AngularFireAuth
-  ) { }
+  constructor(private authentication: AngularFireAuth) { }
 
-  loginWithEmail(email: string, password: string): Promise<firebase.auth.UserCredential> {
-    return this.auth.signInWithEmailAndPassword(email, password);
+  signInWithEmail(email: string, password: string) {
+    return this.authentication.auth.signInWithEmailAndPassword(email, password);
+  } 
+
+  async signUpWithEmailAndPassword(email: string, password: string) {
+    const credentials = await this.authentication.auth.createUserWithEmailAndPassword(email, password);
+    const user = {
+      id: credentials.user.uid,
+      email: credentials.user.email
+    }
+    return user;
   }
 
-  loginWithGoogle(): Promise<firebase.auth.UserCredential> {
-    return this.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
+  getAuthState() {
+    return this.authentication.authState;
   }
 
-  register(email: string, password: string): Promise<firebase.auth.UserCredential> {
-    return this.auth.createUserWithEmailAndPassword(email, password);
+  signOut() {
+    this.authentication.auth.signOut();
   }
 
-  resetPassword(email: string) {
-    return this.auth.sendPasswordResetEmail(email);
-  }
-
-  logout() {
-    this.auth.signOut();
-  }
-
-  getAuth(): AngularFireAuth {
-    return this.auth;
-  }
-  
 }

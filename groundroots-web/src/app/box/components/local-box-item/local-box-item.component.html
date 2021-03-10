@@ -1,0 +1,23 @@
+<div class="box-item flex">
+    <img src="assets/images/vectors/coffee/coffee-bag.svg" alt="">
+    <div class="box-item-details flex justify-content-between align-center">
+        <div class="box-item-content">
+            <h4> {{ boxItem.name }} x {{ boxItem.quantity }} </h4>
+            <p> {{ boxItem.roastery }} @ {{ boxItem.option.size }} <span *ngIf="boxItem.option.ground" class="badge bg-primary">Ground</span></p>
+        </div>
+        <div class="box-item-price">
+            <h4> {{ boxItem.option.price | currency:"R" }} </h4>
+        </div>
+    </div>
+    <div class="box-item-actions flex">
+        <div (click)="increase()" class="box-item-action animate__animated animate__fadeIn animate__delay-first">
+            <mat-icon aria-hidden="false" aria-label="Example home icon">add</mat-icon>
+        </div>
+        <div (click)="decrease()" class="box-item-action animate__animated animate__fadeIn animate__delay-first">
+            <mat-icon aria-hidden="false" aria-label="Example home icon">remove</mat-icon>
+        </div>
+        <div class="box-item-action animate__animated animate__fadeIn animate__delay-first">
+            <mat-icon aria-hidden="false" aria-label="Example home icon">delete</mat-icon>
+        </div>
+    </div>
+</div>

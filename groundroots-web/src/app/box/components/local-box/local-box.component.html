@@ -1,0 +1,66 @@
+<main>
+    <header>
+        <h1> 📦 Box </h1>
+        <p> Confirm your details and subscribe to a new box! </p>
+    </header>
+    <section>
+        <div class="row">
+            <div class="col-md-6">
+                <h2 class="mb-5">Box Details</h2>
+                <div class="box-details">
+                    <div class="box-size row">
+                        <div class="col">
+                            <h4>Size:</h4>
+                        </div>
+                        <div class="col text-right">
+                            <h4> {{ determineSize().name }} @ {{ determineSize().price | currency:"R" }} </h4>
+                        </div>
+                    </div>
+                    <mat-divider class="mb-3 mt-3"></mat-divider>
+                    <div class="box-frequency row">
+                        <div class="col">
+                            <h4>Frequency:</h4>
+                        </div>
+                        <div class="col">
+                            <mat-radio-group [(ngModel)]="box.frequency" aria-label="Select an option">
+                                <mat-radio-button value="Monthly">Monthly</mat-radio-button>
+                                <mat-radio-button class="mx-3" value="Weekly">Weekly</mat-radio-button>
+                            </mat-radio-group>
+                        </div>
+                    </div>
+                    <mat-divider class="mb-3 mt-3"></mat-divider>
+                    <div class="box-address row">
+                        <div class="col">
+                            <h4>Address:</h4>
+                        </div>
+                        <div class="col">
+                            <div *ngIf="user" class="box-selected-address">
+                                <p> {{ user.address.street }} </p>
+                                <p> {{ user.address.city }}, {{ user.address.postalCode }} </p>
+                                <p> {{ user.address.province }} </p>
+                                <p> {{ user.address.country }} </p>
+                            </div>
+                        </div>
+                    </div>
+                    <mat-divider class="mb-3 mt-3"></mat-divider>
+                    <div class="box-total row">
+                        <div class="col">
+                            <h4>Total:</h4>
+                        </div>
+                        <div class="col">
+                            <h4> {{ calculateTotal() | currency:"R" }} </h4>
+                        </div>
+                    </div>
+                </div>
+                <button (click)="signUp()" *ngIf="box.frequency" mat-raised-button color="primary" class="btn mt-5"> Finsh Up </button>
+            </div>
+            <div class="col-md-6">
+                <h2 class="mb-5">Box Items</h2>
+                <div class="box-items">
+                    <app-local-box-item *ngFor="let boxItem of localBoxService.getLocalBox().items" [boxItem]="boxItem"
+                        (update)="update($event)"></app-local-box-item>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>

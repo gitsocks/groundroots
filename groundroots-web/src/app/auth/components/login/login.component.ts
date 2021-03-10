@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from 'src/app/shared/models/user/user.model';
+import { MatSnackBar } from '@angular/material';
+import { Router, RouterEvent } from '@angular/router';
+import { User } from 'src/app/shared/models/user.model';
 import { AuthService } from '../../services/auth.service';
 
 @Component({
@@ -11,42 +13,21 @@ export class LoginComponent implements OnInit {
 
   user: User;
 
-  constructor(
-    private auth: AuthService
-  ) { }
+  constructor(private auth: AuthService, private router: Router, private snack: MatSnackBar) { }
 
   ngOnInit() {
-    this.initializeUser();
+    this.user = {email: '', password: ''};
   }
 
-  initializeUser() {
-    this.user = { uid: "", email: "", password: "" }
-  }
-
-  login() {
-    this.auth.loginWithEmail(this.user.email, this.user.password).then(response => {
-      console.log(response);
-      this.user.email = response.user.email;
-      this.user.uid = response.user.uid;
-      this.user.first_name = response.user.displayName.split(' ')[0];
-      this.user.last_name = response.user.displayName.split(' ')[1];
-      alert(`Welcome back ${this.user.first_name} ${this.user.last_name}!`);
-      
+  signIn() {
+    this.auth.signInWithEmail(this.user.email, this.user.password).then(credentials => {
+      this.router.navigate(['/shop'])
     }).catch(error => {
-      console.log(error);
-    });
-  }
-
-  loginWithGoogle() {
-    this.auth.loginWithGoogle().then(response  => {
-      console.log(response);
-      this.user.email = response.user.email;
-      this.user.uid = response.user.uid;
-      this.user.first_name = response.user.displayName.split(' ')[0];
-      this.user.last_name = response.user.displayName.split(' ')[1];
-      
-    }).catch(error => {
-      console.log(error);
+      if (error.code === "auth/user-not-found") { 
+        this.snack.open("🤷‍♂️ No user was found!", "Register Now", { duration: 5000 }).onAction().subscribe(action => {
+          this.router.navigate(['/auth/register'])
+        });
+      }
     });
   }
 

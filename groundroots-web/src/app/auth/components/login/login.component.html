@@ -1,21 +1,24 @@
-<div class="container">
-    <div class="login p-5">
-        <h1> 👋 Welcome back <span *ngIf="user.firstName"> {{ user.firstName }} {{ user.lastName }} </span> ! </h1>
-        <p> Please login to the app. </p>
-        <div *ngIf="!user.firstName" class="form">
-            <div class="form-group mt-2">
-                <label for="email"> ✉️ Email Address </label>
-                <input [(ngModel)]="user.email" type="text" class="form-control" name="email" id="email">
+<div class="login flex">
+    <div class="login-img-section"></div>
+    <div class="login-form-section flex align-center">
+        <div class="form">
+            <h1> 🤘 Welcome Back </h1>
+            <p> Please login to continue to the site. </p>
+            <div class="form-content">
+                <div class="email">
+                    <mat-form-field class="full-width" appearance="fill">
+                        <mat-label>Email</mat-label>
+                        <input [(ngModel)]="user.email" type="email" matInput placeholder="Ex. billy@example.com">
+                    </mat-form-field>
+                </div>
+                <div class="password">
+                    <mat-form-field class="full-width" appearance="fill">
+                        <mat-label>Password</mat-label>
+                        <input [(ngModel)]="user.password" type="password" matInput>
+                    </mat-form-field>
+                </div>
+                <button class="btn" (click)="signIn()" mat-raised-button color="primary"> Sign In </button>
             </div>
-            <div class="form-group mt-2">
-                <label for="password"> 🔒 Password </label>
-                <input [(ngModel)]="user.password" type="password" class="form-control" name="password" id="password">
-            </div>
-            <div class="d-flex flex-row justify-content-between">
-                <button (click)="login()" class="btn btn-primary mt-2"> ⚡️ Login </button>
-                <button (click)="loginWithGoogle()" class="btn btn-primary mt-2"> 🔥 Google </button>
-            </div>
-            <div class="hint mt-2"> 👉 <a routerLink="/register"> Register here ... </a></div>
         </div>
     </div>
 </div>
