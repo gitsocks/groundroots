@@ -9,3 +9,14 @@ export const addProduct = functions.https.onRequest((request, response) => {
   const db = admin.firestore();
   db.collection("products").add(product).then(() => { response.send(product); });
 });
+
+export const processPayment = functions.https.onRequest((request, response) => {
+  const payment = request.body;
+  const db = admin.firestore();
+  const boxId = payment.custom_str1;
+  db.collection("payments").add(payment);
+  db.collection("boxes").doc(boxId).update({
+    status: "Paid",
+    token: payment.token
+  });
+});

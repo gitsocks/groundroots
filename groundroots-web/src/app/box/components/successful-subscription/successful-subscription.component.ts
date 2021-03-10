@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LocalBoxService } from '../../services/local-box.service';
 
 @Component({
   selector: 'app-successful-subscription',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SuccessfulSubscriptionComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private localBoxService: LocalBoxService
+  ) { }
 
   ngOnInit() {
+    this.localBoxService.reset();
   }
 
 }

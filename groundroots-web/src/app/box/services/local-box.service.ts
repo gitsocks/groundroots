@@ -38,6 +38,12 @@ export class LocalBoxService {
     this.save();
   }
 
+  reset() {
+    this.readBox();
+    this.box.items = [];
+    this.save();
+  }
+
   private isIncrease(oldItem, newItem) {
     return newItem.quantity > oldItem.quantity;
   }

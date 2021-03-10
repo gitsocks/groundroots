@@ -1,0 +1,17 @@
+.response {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(241, 241, 241);
+}
+
+.response > div {
+    height: 100%;
+}
+
+.response-content { 
+    background-color: white;
+    width: 40%;
+    margin: auto;
+    padding: 2rem;
+    border-radius: 30px;
+}

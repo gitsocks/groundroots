@@ -1,5 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { MatDialogRef } from '@angular/material';
+import { Component, Inject, OnInit, ViewChild } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { environment } from 'src/environments/environment';
+import { FormControl, FormGroup, NgForm } from '@angular/forms';
+import * as moment from 'moment';
+import * as md5 from 'md5';
+import { BoxService } from 'src/app/box/services/box.service';
 
 @Component({
   selector: 'app-confirm-subscription',
@@ -8,13 +13,34 @@ import { MatDialogRef } from '@angular/material';
 })
 export class ConfirmSubscriptionComponent implements OnInit {
 
-  constructor(private reference: MatDialogRef<ConfirmSubscriptionComponent>) { }
+  signature: string;
+
+  constructor(
+    private reference: MatDialogRef<ConfirmSubscriptionComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any,
+    private boxService: BoxService
+    ) { }
 
   ngOnInit() {
+    this.boxService.create(this.data.box).then(reference => {
+      this.data.box.id = reference.id;
+      this.generateSignature();
+    });
+  }
+
+  nextMonth() {
+    return moment().startOf('month').format("yyyy-MM-DD");
   }
 
   continue() {
-    this.reference.close(true);
+  }
+
+  environment() {
+    return environment;
+  }
+
+  generateSignature() {
+
   }
 
 }

@@ -1,6 +1,28 @@
 <h1 mat-dialog-title>🙌 Continue to Payment</h1>
-<div mat-dialog-content>Are you sure you want to continue to payment?</div>
-<div mat-dialog-actions>
-    <button (click)="continue()" mat-button color="primary">Continue</button>
-    <button mat-button mat-dialog-close>Cancel</button>
-</div>
+<form ngNoForm [action]="environment().payfast.url" (ngSubmit)="continue()">
+    <div mat-dialog-content>
+        <p>Are you sure you want to continue to payment?</p>
+        <input type="hidden" name="merchant_id" [value]="environment().payfast.merchant_id">
+        <input type="hidden" name="merchant_key" value="{{ environment().payfast.merchant_key }}">
+        <input type="hidden" name="amount" value="{{ this.data.box.price }}">
+        <input type="hidden" name="item_name" value="{{ this.data.box.size }} Ground Roots Box">
+        <input type="hidden" name="return_url" value="{{ environment().payfast.return_url }}">
+        <input type="hidden" name="cancel_url" value="{{ environment().payfast.cancel_url }}">
+        <input type="hidden" name="notify_url" value="{{ environment().payfast.notify_url }}">
+        <input type="hidden" name="name_first" value="{{ this.data.user.firstName }}">
+        <input type="hidden" name="name_last" value="{{ this.data.user.lastName }}">
+        <input type="hidden" name="email_address" value="{{ this.data.user.email }}">
+        <input type="hidden" name="m_payment_id" value="{{ this.data.user.id }}">
+        <input type="hidden" name="email_confirmation" value="1">
+        <input type="hidden" name="confirmation_address" value="{{ this.data.user.email }}">
+        <input type="hidden" name="subscription_type" value="1">
+        <input type="hidden" name="billing_date" value="{{ nextMonth() }}">
+        <input type="hidden" name="frequency" value="3">
+        <input type="hidden" name="cycles" value="0">
+        <input type="hidden" name="custom_str1" value="{{ this.data.box.id }}">
+    </div>
+    <div mat-dialog-actions>
+        <button type="submit" mat-button color="primary"> Continue </button>
+        <button mat-button mat-dialog-close>Cancel</button>
+    </div>
+</form>
