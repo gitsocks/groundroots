@@ -11,11 +11,14 @@ export const environment = {
     measurementId: "G-8PE0PHFQZN"
   },
   payfast: {
-    url: "https://www.payfast.co.za/eng/process",
-    merchant_id: "10000100",
-    merchant_key: "46f0cd694581a",
-    return_url: "https://www.groundroots.co/box/success",
-    cancel_url: "https://www.groundroots.co/box/cancel",
-    notify_url: "https://www.groundroots.co/box/notify"
+    // url: "https://www.payfast.co.za/eng/process",
+    // merchant_id: "10000100",
+    // merchant_key: "46f0cd694581a",
+    url: "https://sandbox.payfast.co.za/eng/process",
+    merchant_id: "10021945",
+    merchant_key: "1mqknuo6fdkmz",
+    return_url: "https://ground-roots.web.app/box/success",
+    cancel_url: "https://ground-roots.web.app/box/cancel",
+    notify_url: "https://us-central1-ground-roots.cloudfunctions.net/processPayment"
   }
 };

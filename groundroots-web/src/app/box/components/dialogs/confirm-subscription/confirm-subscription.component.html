@@ -6,7 +6,7 @@
         <input type="hidden" name="merchant_key" value="{{ environment().payfast.merchant_key }}">
         <input type="hidden" name="amount" value="{{ this.data.box.price }}">
         <input type="hidden" name="item_name" value="{{ this.data.box.size }} Ground Roots Box">
-        <input type="hidden" name="return_url" value="{{ environment().payfast.notify_url }}">
+        <input type="hidden" name="return_url" value="{{ environment().payfast.return_url }}">
         <input type="hidden" name="cancel_url" value="{{ environment().payfast.cancel_url }}">
         <input type="hidden" name="notify_url" value="{{ environment().payfast.notify_url }}">
         <input type="hidden" name="name_first" value="{{ this.data.user.firstName }}">
