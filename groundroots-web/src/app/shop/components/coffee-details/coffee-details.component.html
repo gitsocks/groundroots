@@ -1,11 +1,11 @@
-<div [@openClose]="coffee ? 'open' : 'closed'"  class="coffee-details flex">
+<div [@openClose]="coffee ? 'open' : 'closed'"  class="coffee-details flex bg-secondary">
         <div class="coffee-details-img-wrapper flex align-center">
             <img src="assets/images/vectors/coffee/coffee-bag.svg" alt="">
         </div>
         <div *ngIf="coffee" class="coffee-details-content-wrapper flex align-center">
             <div class="coffee-details-content">
                 <a (click)="closePopup()"> 👈 Back </a>
-                <h2> {{ coffee.name }} </h2>
+                <h2 class="mt-3"> {{ coffee.name }} </h2>
                 <h4> {{ coffee.roastery }} </h4>
                 <p class="origin"> {{ coffee.blend }} </p>
                 <p class="description">
@@ -28,7 +28,7 @@
                     <div class="price">
                         <h2 *ngIf="selectedOption">R {{ selectedOption.price }}</h2>
                     </div>
-                    <button (click)="addToBox()" [disabled]="!selectedOption" mat-raised-button color="primary"> 📦 Add To Box </button>
+                    <button (click)="addToBox()" [disabled]="!selectedOption" mat-raised-button class="btn primary add-to-box"> Add To Box </button>
                 </div>
             </div>
         </div>

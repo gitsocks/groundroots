@@ -1,0 +1,29 @@
+mat-toolbar {
+    background-color: white;
+    padding: 1rem;
+}
+
+.logo {
+    font-family: 'Courier Prime', monospace !important;
+    font-weight: bold;
+    font-size: 24px;
+    margin-top: 6px;
+}
+
+.form-control {
+    width: 600px;
+    border-radius: 15px;
+    background-color: var(--light-gray);
+    border-color: var(--light-gray);
+    padding-left: 15px;
+}
+.form-control:focus {
+    box-shadow: none;
+}
+.form-control::placeholder {
+    color: var(--dark-gray);
+}
+
+.navigation-spacer {
+  flex: 1 1 auto;
+}

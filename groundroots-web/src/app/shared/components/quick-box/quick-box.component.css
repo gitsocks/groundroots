@@ -1,0 +1,41 @@
+.quick-box {
+    background-color: var(--dark-green);
+    height: 100%;
+    width: 500px;
+    color: white;
+}
+
+.quick-box-header {
+    background-color: var(--light-green);
+    padding: 1rem;
+    border-radius: 0px 0px 30px 30px;
+    height: 20%;
+    position: relative;
+}
+
+.quick-box-header .content {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+}
+
+.quick-box-header .content p {
+    margin-bottom: 0;
+}
+
+.quick-box-content {
+    width: 90%;
+    margin: auto;
+    position: absolute;
+    bottom: 0;
+    top: 200px;
+    left: 0;
+    right: 0;
+}
+
+button {
+    position: absolute;
+    bottom: 15px;
+    left: 0;
+    right: 0;
+}

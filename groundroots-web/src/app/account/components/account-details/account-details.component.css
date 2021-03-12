@@ -23,7 +23,7 @@
 .account-tabs .tab-dot {
     width: 5px;
     height: 5px;
-    background-color: greenyellow;
+    background-color: var(--dark-green);
     margin: auto;
     border-radius: 50%;
     display: none;

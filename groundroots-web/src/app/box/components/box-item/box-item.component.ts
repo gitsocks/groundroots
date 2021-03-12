@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { BoxItem } from 'src/app/shared/models/box-item.model';
 import { Box } from 'src/app/shared/models/box.model';
 
 @Component({
@@ -8,7 +9,7 @@ import { Box } from 'src/app/shared/models/box.model';
 })
 export class BoxItemComponent implements OnInit {
 
-  @Input() box: Box;
+  @Input() box: BoxItem;
 
   constructor() { }
 

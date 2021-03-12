@@ -12,8 +12,8 @@ import { CancelSubscriptionComponent } from './components/dialogs/cancel-subscri
 
 const routes: Routes = [
   { path: '', component: LocalBoxComponent },
-  { path: 'successful', component: SuccessfulSubscriptionComponent },
-  { path: ':id', component: BoxDetailsComponent }
+  { path: 'payment/success', component: SuccessfulSubscriptionComponent },
+  { path: 'box/:id', component: BoxDetailsComponent }
 ]
 
 @NgModule({

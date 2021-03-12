@@ -3,7 +3,6 @@ mat-card {
     width: 180px;
     height: 180px;
     border-radius: 30px;
-    background-color: #e5e4cc;
     transition: 0.3s;
     margin-right: 20px;
 }
@@ -15,7 +14,7 @@ mat-card:hover {
 
 mat-card img {
     position: absolute;
-    width: 100px;
+    width: 80px;
     top: -30px;
     right: 15px;
 }

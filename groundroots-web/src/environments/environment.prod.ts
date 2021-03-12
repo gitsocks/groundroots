@@ -19,6 +19,7 @@ export const environment = {
     merchant_key: "1mqknuo6fdkmz",
     return_url: "https://ground-roots.web.app/box/success",
     cancel_url: "https://ground-roots.web.app/box/cancel",
-    notify_url: "https://us-central1-ground-roots.cloudfunctions.net/processPayment"
+    notify_url: "https://us-central1-ground-roots.cloudfunctions.net/app/payment",
+    subscription_api: "https://api.payfast.co.za/subscriptions",
   }
 };
