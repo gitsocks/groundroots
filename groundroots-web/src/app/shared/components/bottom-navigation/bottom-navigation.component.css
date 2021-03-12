@@ -3,7 +3,7 @@
     bottom: 2rem;
     right: 0;
     left: 0;
-    background-color: #F0F0F0;
+    background-color: #6E7F71;
     margin: auto;
     padding: 1rem;
     border-radius: 30px;
@@ -14,11 +14,11 @@
     padding: 10px;
     border-radius: 50px;
     transition: 0.3s ease-in-out;
-    color: #959595;
+    color: white;
 }
 
 .navigation-icon:hover {
     cursor: pointer;
-    background-color: #AB9C81;
-    color: black;
+    background-color: #7E8F7F;
+    color: white;
 }

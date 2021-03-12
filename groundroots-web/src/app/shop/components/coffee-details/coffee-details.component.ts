@@ -70,7 +70,11 @@ export class CoffeeDetailsComponent implements OnInit, OnChanges {
     const boxItem = this.generateBoxItem();
     if (localBox) {
       const error = this.localBoxService.addBoxItem(boxItem);
-      if (error) this.snack.open(error, "Awesome", { duration: 3000 });
+      if (error)  {
+        this.snack.open(error, "Awesome");
+      } else {
+        this.snack.open("Item added to box.", "Awesome", { duration: 3000 });
+      }
     } else {
       const boxItems: BoxItem[] = [boxItem];
       const box: Box = { items: boxItems };

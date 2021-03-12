@@ -1,6 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
 
-
+:root {
+    --light-brown: #EFEDE3;
+    --dark-brown: #BD9F79;
+    --light-green: #7E8F7F;
+    --dark-green: #6E7F71; 
+    --light-gray: #F0F0F0;
+    --dark-gray: #959595;
+}
 
 html,
 body {
@@ -12,26 +19,75 @@ body {
     font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
+
 h1 {
     font-size: 42px;
+    font-family: 'Baloo Tammudu 2', cursive;
 }
 
 h2 {
     font-size: 36px;
+    font-family: 'Courier Prime', monospace;
+    font-weight: bold;
 }
 
 h4 {
     font-size: 24px;
+    font-family: 'Courier Prime', monospace;
+}
+p, a {
+    font-family: 'Baloo Tammudu 2', cursive;
+}
+
+p.courier {
+    font-family: 'Courier Prime', monospace;
 }
 
 a {
+    color: inherit;
     text-decoration: none;
 }
 a:hover {
     cursor: pointer;
+    color: inherit;
 }
 a:hover span {
     transform: translateX("5px") !important;
+}
+
+.bg-primary {
+    background-color: var(--light-brown) !important;
+}
+
+.bg-secondary {
+    background-color: var(--dark-green) !important;
+}
+
+.bg-accent {
+    background-color: var(--light-green) !important;
+}
+
+.btn.primary {
+    background-color: var(--dark-brown) !important;
+    border-color: var(--dark-brown) !important;
+    color: white !important;
+}
+
+.btn.secondary {
+     background-color: var(--dark-gray) !important;
+    border-color: var(--dark-gray) !important;
+    color: white !important;
+}
+
+
+snack-bar-container {
+    border-radius: 30px !important;
+    background: var(--dark-brown) !important;
+    color: white !important;
+}
+
+snack-bar-container .mat-button-wrapper {
+    color: white !important;
 }
 
 /* Buttons */

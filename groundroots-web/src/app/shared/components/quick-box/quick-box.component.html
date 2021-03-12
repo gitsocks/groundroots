@@ -1,0 +1,17 @@
+<div class="quick-box">
+    <div class="quick-box-header">
+        <div class="content">
+            <h2>Subscription Box</h2>
+            <div class="flex justify-content-between">
+                <p class="courier">Total: {{ calculateTotal() | currency:"R" }} </p>
+                <p class="courier">Items: {{ localbox.getLocalBox().items.length }} </p>
+                <p class="courier">Size: {{ determineSize().name }} </p>
+            </div>
+            
+        </div>
+    </div>
+    <div class="quick-box-content">
+        <app-quick-box-item *ngFor="let item of localbox.getLocalBox().items" [item]="item" (remove)="remove($event)" (update)="update($event)"></app-quick-box-item>
+        <button (click)="closeBar()" routerLink="/box" class="btn primary" mat-raised-button> Subscribe Box </button>
+    </div>
+</div>

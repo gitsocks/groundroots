@@ -6,5 +6,7 @@ export interface Box {
     size?: string;
     price?: number;
     frequency?: string;
+    token?: string;
+    status?: string;
     items: BoxItem[]
 }

@@ -1,0 +1,30 @@
+.box-item {
+    position: relative;
+    margin-bottom: 45px;
+    background-color: var(--dark-green);
+    border-radius: 30px;
+    color: white;
+}
+
+.box-item img {
+    position: absolute;
+    width: 65px;
+    top: -30px;
+    left: 5px;
+}
+
+.box-item-content {
+    margin-left: 50px;
+}
+
+.box-item-details {
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+    border-radius: 30px;
+    padding: 15px 30px;
+}
+
+.box-item-details h4,
+.box-item-details p {
+    margin-bottom: 0 !important;
+}

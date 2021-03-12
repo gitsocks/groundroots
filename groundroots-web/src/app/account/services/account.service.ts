@@ -10,7 +10,7 @@ export class AccountService {
   constructor(private firestore: AngularFirestore) { }
 
   fetchById(uid: string) {
-    return this.firestore.collection('accounts').doc(uid);
+    return this.firestore.collection<User>('accounts').doc(uid);
   }
 
   async create(user: User) {

@@ -4,7 +4,7 @@
         <p> We have a range of awesome roasteries to add to your box!</p>
     </header>
     <section>
-        <div class="flex">
+        <div class="flex flex-wrap">
             <app-coffee-list-item *ngFor="let coffee of coffees" (click)="selectCoffee(coffee)" [coffee]="coffee"></app-coffee-list-item>
         </div>
     </section>

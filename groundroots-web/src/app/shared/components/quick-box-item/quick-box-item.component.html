@@ -1,0 +1,22 @@
+<div class="quick-box-item flex justify-content-between align-center">
+    <div class="quick-box-item-meta">
+        <img src="assets/images/vectors/coffee/coffee-bag.svg" alt="">
+        <span>Qty: {{ item.quantity }}</span>
+    </div>
+
+    <div class="quick-box-item-content">
+        <p class="title"> {{ item.roastery }} {{ item.name }} </p>
+        <p class="description"> {{ item.option.size }} @ {{ item.option.price | currency:"R" }} </p>
+    </div>
+    <div class="quick-box-item-actions flex justify-content-between">
+        <div (click)="decrease()" class="action flex align-center">
+            <mat-icon>remove</mat-icon>
+        </div>
+        <div (click)="increase()" class="action flex align-center">
+            <mat-icon>add</mat-icon>
+        </div>
+        <div (click)="removeItem()" class="action flex align-center">
+            <mat-icon>delete</mat-icon>
+        </div>
+    </div>
+</div>
