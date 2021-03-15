@@ -8,3 +8,17 @@ section {
 .box-selected-address p {
     margin-bottom: 0;
 }
+
+@media screen and (max-width: 600px) {
+    main {
+        padding: 2rem !important;
+    }
+
+    h4 {
+        font-size: 18px;
+    }
+
+    .box-items-wrapper {
+        display: none;
+    }
+}

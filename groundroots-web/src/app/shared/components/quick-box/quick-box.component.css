@@ -39,3 +39,38 @@ button {
     left: 0;
     right: 0;
 }
+
+
+@media screen and (max-width: 600px) {
+    .quick-box {
+        background-color: var(--dark-green);
+        height: 100%;
+        width: 400px;
+        color: white;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    h2 {
+        font-size: 20px !important;
+    }
+    .quick-box-header p {
+        font-size: 14px !important;
+        margin-left: 5px;
+    }
+    .quick-box {
+        background-color: var(--dark-green);
+        height: 100%;
+        width: 350px;
+        color: white;
+    }
+    .quick-box-content {
+        width: 90%;
+        margin: auto;
+        position: absolute;
+        bottom: 0;
+        top: 150px;
+        left: 0;
+        right: 0;
+    }
+}

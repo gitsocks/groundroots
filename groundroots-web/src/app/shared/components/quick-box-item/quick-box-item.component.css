@@ -27,13 +27,20 @@
     margin-left: 60px;
 }
 
-.quick-box-item-content .title {
+.roastery {
+    font-size: 10px;
+    text-transform: uppercase;
+}
+
+.title {
+    margin-top: 5px;
     font-size: 18px;
+    line-height: 1.2;
     font-weight: bold;
 }
 
-.quick-box-item-content .description {
-    font-size: 16px;
+.description {
+    font-size: 14px;
 }
 
 .action {

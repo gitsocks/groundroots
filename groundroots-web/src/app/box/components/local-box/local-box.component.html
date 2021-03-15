@@ -1,6 +1,6 @@
 <main>
     <header>
-        <h1> 📦 Box </h1>
+        <h1><b>View</b> Box</h1>
         <p> Confirm your details and subscribe to a new box! </p>
     </header>
     <section>
@@ -24,7 +24,7 @@
                         <div class="col">
                             <mat-radio-group [(ngModel)]="box.frequency" aria-label="Select an option">
                                 <mat-radio-button value="Monthly">Monthly</mat-radio-button>
-                                <mat-radio-button class="mx-3" value="Weekly">Weekly</mat-radio-button>
+                                <mat-radio-button value="Weekly">Weekly</mat-radio-button>
                             </mat-radio-group>
                         </div>
                     </div>
@@ -54,7 +54,7 @@
                 </div>
                 <button (click)="signUp()" *ngIf="box.frequency" mat-raised-button class="btn primary mt-5"> Finsh Up </button>
             </div>
-            <div class="col-md-6">
+            <div class="box-items-wrapper col-md-6">
                 <h2 class="mb-5">Box Items</h2>
                 <div class="box-items">
                     <app-local-box-item *ngFor="let boxItem of localBoxService.getLocalBox().items" [boxItem]="boxItem"

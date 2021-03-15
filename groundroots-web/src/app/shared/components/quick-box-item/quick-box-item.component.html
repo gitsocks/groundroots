@@ -3,9 +3,9 @@
         <img src="assets/images/vectors/coffee/coffee-bag.svg" alt="">
         <span>Qty: {{ item.quantity }}</span>
     </div>
-
     <div class="quick-box-item-content">
-        <p class="title"> {{ item.roastery }} {{ item.name }} </p>
+        <p class="roastery">{{ item.roastery }}</p>
+        <p class="title"> {{ item.name }} </p>
         <p class="description"> {{ item.option.size }} @ {{ item.option.price | currency:"R" }} </p>
     </div>
     <div class="quick-box-item-actions flex justify-content-between">
