@@ -69,8 +69,6 @@
     width: 200px !important;
 }
 
-
-
 @media screen and (max-width: 600px) {
     .coffee-details-img-wrapper {
         display: none;
@@ -87,4 +85,9 @@
 }
 
 @media screen and (max-height: 700px) {
+     .coffee-details-content p {
+        font-size: 12px;
+        margin-bottom: 5px;
+        margin-top: 5px;
+     }
 }
