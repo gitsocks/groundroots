@@ -90,4 +90,11 @@
         margin-bottom: 5px;
         margin-top: 5px;
      }
+
+     .coffee-details-content h4 {
+         margin-top: 5px !important;
+     }
+     .coffee-details-content .price h2 {
+         font-size: 18px !important;
+     }
 }
