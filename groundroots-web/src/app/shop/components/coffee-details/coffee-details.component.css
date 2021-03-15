@@ -30,13 +30,16 @@
     width: 50%;
 }
 
-.coffee-details-content-wrapper h2 {
-    margin-bottom: 0 !important;
+.coffee-details-content-wrapper h4 {
+    font-size: 12px !important; 
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
-.coffee-details-content-wrapper h4 {
+.coffee-details-content-wrapper h2 {
     margin-top: 0 !important;
     margin-bottom: 10px !important;
+    font-weight: bold;
 }
 
 .coffee-details-content-wrapper .description {
@@ -81,4 +84,7 @@
     .coffee-details-content .btn {
         width: 100% !important;
     } 
+}
+
+@media screen and (max-height: 700px) {
 }

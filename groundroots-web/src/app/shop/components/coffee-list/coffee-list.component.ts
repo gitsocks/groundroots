@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { CoffeeOption } from 'src/app/shared/models/coffee-option.model';
 import { Coffee } from 'src/app/shared/models/coffee.model';
 import { CoffeeBuilderService } from '../../services/coffee-builder.service';

@@ -18,7 +18,7 @@ import { MatSnackBar } from '@angular/material';
   animations: [
     trigger('openClose', [
       state('open', style({
-        top: '20%',
+        top: '10%',
         visibility: 'visible'
       })),
       state('closed', style({
