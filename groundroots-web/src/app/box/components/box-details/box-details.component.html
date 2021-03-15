@@ -1,7 +1,6 @@
 <main>
     <header>
-        <h1> 📦 Box </h1>
-        <p> Confirm your details and subscribe to a new box! </p>
+        <h1><b>View</b> Box </h1>
     </header>
     <section *ngIf="box">
         <div class="row">
@@ -53,7 +52,7 @@
                         Cancel Subscription </button>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="box-items-wrapper col-md-6">
                 <h2 class="mb-5">Box Items</h2>
                 <div class="box-items">
                     <app-box-item *ngFor="let item of box.items" [box]="item"></app-box-item>

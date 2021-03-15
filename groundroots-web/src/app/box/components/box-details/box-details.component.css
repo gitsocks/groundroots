@@ -1,6 +1,18 @@
-main {
-    padding: 5rem;
-}
 section {
     padding-top: 1rem;
+}
+
+@media screen and (max-width: 600px) {
+
+    h4 {
+        font-size: 18px;
+    }
+
+    .box-item-price h4 {
+        font-size: 16px !important;
+    }
+
+    .box-items-wrapper {
+        margin-top: 20px;
+    }
 }

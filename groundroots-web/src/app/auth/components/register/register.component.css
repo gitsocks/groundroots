@@ -46,5 +46,15 @@ a.hint:hover {
     .register-form-section {
         width: 100%;
     }
+    .register-img-section {
+        display: none;
+    }
+    .register-form-section {
+        width: 100% !important;
+        padding: 2rem !important;
+    }
+    .form-content {
+        width: 100%;
+    }
 }
 

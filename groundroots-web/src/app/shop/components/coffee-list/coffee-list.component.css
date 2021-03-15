@@ -1,6 +1,4 @@
-main {
-    padding: 5rem;
-}
+
 
 @media screen and (max-width: 950px) {
     .search {
@@ -8,9 +6,4 @@ main {
     }
 }
 
-@media screen and (max-width: 600px) {
-    main {
-        padding: 2rem !important;
-    }
-}
 

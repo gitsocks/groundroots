@@ -1,5 +1,5 @@
 <div *ngIf="boxes">
-    <div *ngFor="let box of boxes" routerLink="/box/{{ box.id }}" class="box flex align-center justify-content-between">
+    <div *ngFor="let box of boxes" routerLink="/app/box/view/{{ box.id }}" class="box flex align-center justify-content-between">
         <h4> {{ box.size }} </h4>
         <h6> {{ box.price | currency:"R" }} / {{ box.items.length }} Items</h6>
     </div>

@@ -13,7 +13,7 @@ import { CancelSubscriptionComponent } from './components/dialogs/cancel-subscri
 const routes: Routes = [
   { path: '', component: LocalBoxComponent },
   { path: 'payment/success', component: SuccessfulSubscriptionComponent },
-  { path: 'box/:id', component: BoxDetailsComponent }
+  { path: 'view/:id', component: BoxDetailsComponent }
 ]
 
 @NgModule({
