@@ -26,7 +26,7 @@ export class LocalBoxService {
 
   getLocalBox(): Box {
     const localBox = localStorage.getItem('localBox');
-    if (this.exists(localBox)) {
+    if (localBox) {
       this.box = JSON.parse(localBox);
       return this.box;
     } else {
