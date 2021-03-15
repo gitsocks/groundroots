@@ -1,7 +1,42 @@
-<main>
-    <input type="text" [(ngModel)]="user.firstName" placeholder="first name">
-    <input type="text" [(ngModel)]="user.lastName" placeholder="last name">
-    <input type="email" [(ngModel)]="user.email" placeholder="emalil">
-    <input type="password" [(ngModel)]="user.password" placeholder="password">
-    <button (click)="register()"> Register </button>
-</main>
+<div class="register flex">
+    <div class="register-img-section"></div>
+    <div class="register-form-section flex align-center">
+        <div class="form">
+            <h1> Welcome To Ground Roots </h1>
+            <a routerLink="/auth/login" class="hint mb-4"> Already have an account? Login here.</a>
+            <div class="form-content">
+                <div class="first-name">
+                    <mat-form-field class="full-width" appearance="fill">
+                        <mat-label>First Name</mat-label>
+                        <input [(ngModel)]="user.firstName" type="text" matInput placeholder="Ex. Billy">
+                    </mat-form-field>
+                </div>
+                <div class="last-name">
+                    <mat-form-field class="full-width" appearance="fill">
+                        <mat-label>Last Name</mat-label>
+                        <input [(ngModel)]="user.lastName" type="text" matInput placeholder="Ex. Anderson">
+                    </mat-form-field>
+                </div>
+                <div class="email">
+                    <mat-form-field class="full-width" appearance="fill">
+                        <mat-label>Email</mat-label>
+                        <input [(ngModel)]="user.email" type="text" matInput placeholder="Ex. billy@example.com">
+                    </mat-form-field>
+                </div>
+                <div class="cellphone">
+                    <mat-form-field class="full-width" appearance="fill">
+                        <mat-label>Cellphone</mat-label>
+                        <input [(ngModel)]="user.cellphone" type="tel" matInput placeholder="Ex. 0123456789">
+                    </mat-form-field>
+                </div>
+                <div class="password">
+                    <mat-form-field class="full-width" appearance="fill">
+                        <mat-label>Password</mat-label>
+                        <input [(ngModel)]="user.password" type="text" matInput placeholder="Ex. This one is secret">
+                    </mat-form-field>
+                </div>
+                <button class="btn primary" (click)="register()" mat-raised-button color="primary"> Register </button>
+            </div>
+        </div>
+    </div>
+</div>

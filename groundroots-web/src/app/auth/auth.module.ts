@@ -5,6 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { LoginComponent } from './components/login/login.component';
+import { AuthComponent } from './auth.component';
 
 const routes: Routes = [
   { path: 'register', component: RegisterComponent },
@@ -12,7 +13,7 @@ const routes: Routes = [
 ]
 
 @NgModule({
-  declarations: [RegisterComponent, LoginComponent],
+  declarations: [RegisterComponent, LoginComponent, AuthComponent],
   imports: [
     SharedModule,
     RouterModule.forChild(routes),

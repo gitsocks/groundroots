@@ -1,16 +1,1 @@
-<mat-drawer-container class="drawer-container" autosize [hasBackdrop]="true" >
-    <mat-drawer #menu class="menu-sidenav" mode="over" position="start">
-       <app-menu></app-menu>
-    </mat-drawer>
-    <mat-drawer #box class="box-sidenav" mode="over" position="end">
-        <app-quick-box (close)="box.close()"></app-quick-box>
-    </mat-drawer>
-    <div class="sidenav-content">
-        <app-top-navigation (toggleMenu)="menu.toggle()" (toggleBox)="box.toggle()"></app-top-navigation>
-        <main>
-            <router-outlet></router-outlet>
-        </main>
-        <app-bottom-navigation></app-bottom-navigation>
-    </div>
-
-</mat-drawer-container>
+<router-outlet></router-outlet>

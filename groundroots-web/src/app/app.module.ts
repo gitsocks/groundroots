@@ -11,7 +11,6 @@ import { AngularFireAuthGuardModule } from '@angular/fire/auth-guard';
 import { ShopModule } from './shop/shop.module';
 
 import { AngularFirestoreModule } from '@angular/fire/firestore';
-import { BoxModule } from './box/box.module';
 
 
 @NgModule({
@@ -22,7 +21,6 @@ import { BoxModule } from './box/box.module';
     SharedModule,
     AuthModule,
     ShopModule,
-    BoxModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebase),
