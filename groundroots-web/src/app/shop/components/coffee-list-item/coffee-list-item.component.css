@@ -4,7 +4,8 @@ mat-card {
     height: 180px;
     border-radius: 30px;
     transition: 0.3s;
-    margin-right: 20px;
+    margin: auto;
+    margin-top: 2rem;
 }
 
 mat-card:hover {
@@ -21,11 +22,30 @@ mat-card img {
 
 mat-card-content {
     position: absolute;
-    bottom: 30px;
-    left: 30px;
+    bottom: 20px;
+    left: 25px;
 }
 
 mat-card-content p {
     margin-top: 0;
     margin-bottom: 2px !important;
+    line-height: 1;
+}
+
+@media screen and (max-width: 600px) {
+    mat-card {
+        width: 160px;
+        height: 160px;
+    }
+
+    mat-card img {
+        width: 50px;
+        top: -15px;
+        right: 10px;
+    }
+
+    mat-card-content {
+        bottom: 15px;
+        left: 20px;
+    }
 }

@@ -1,16 +1,16 @@
 <main>
-    <header class="flex justify-content-between">
+    <header class="flex flex-wrap justify-content-between align-center">
         <div>
-            <h1> ☕️ Shop </h1>
+            <h1><b>Discover</b> Roastery Coffee </h1>
         </div>
-        <mat-form-field appearance="fill">
+        <mat-form-field class="search" appearance="fill">
             <mat-label>Search</mat-label>
             <input matInput>
         </mat-form-field>
     </header>
     <section>
-        <div class="flex flex-wrap">
-            <app-coffee-list-item *ngFor="let coffee of coffees" (click)="selectCoffee(coffee)" [coffee]="coffee"></app-coffee-list-item>
+        <div class="row">
+            <app-coffee-list-item class="col-6 col-sm-4 col-md-3 col-lg-2" *ngFor="let coffee of coffees" (click)="selectCoffee(coffee)" [coffee]="coffee"></app-coffee-list-item>
         </div>
     </section>
 </main>
