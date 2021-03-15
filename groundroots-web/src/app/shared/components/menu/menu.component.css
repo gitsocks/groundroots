@@ -1,0 +1,36 @@
+.menu {
+    background-color: var(--dark-green);
+    width: 250px;
+    height: 100%;
+    color: white !important;
+}
+.menu-header {
+    background-color: var(--light-green);
+    padding: 1rem;
+    border-radius: 0px 0px 30px 30px;
+    height: 20%;
+    position: relative;
+}
+.menu-header .content {
+    position: absolute;
+    bottom: 10px;
+    left: 30px;
+}
+
+.menu-content {
+    padding: 10px;
+}
+
+.mat-subheader,
+mat-list-item {
+    color: white !important;
+}
+
+mat-list-item {
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+mat-list-item:hover {
+    background-color: var(--light-green);
+}

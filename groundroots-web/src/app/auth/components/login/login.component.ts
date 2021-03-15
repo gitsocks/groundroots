@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
 
   signIn() {
     this.auth.signInWithEmail(this.user.email, this.user.password).then(credentials => {
-      this.router.navigate(['/shop'])
+      this.router.navigate(['/app/coffee'])
     }).catch(error => {
       if (error.code === "auth/user-not-found") { 
         this.snack.open("🤷‍♂️ No user was found!", "Register Now", { duration: 5000 }).onAction().subscribe(action => {

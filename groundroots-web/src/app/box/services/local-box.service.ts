@@ -20,13 +20,21 @@ export class LocalBoxService {
     localStorage.setItem('localBox', JSON.stringify(this.box));
   }
 
+  private exists(box) {
+    return box !== "undefined";
+  }
+
   getLocalBox(): Box {
     const localBox = localStorage.getItem('localBox');
-    if (localBox) {
+    if (this.exists(localBox)) {
       this.box = JSON.parse(localBox);
       return this.box;
     } else {
-      return null;
+      this.box = {
+        items: []
+      }
+      this.save();
+      return this.box;
     }
   }
 

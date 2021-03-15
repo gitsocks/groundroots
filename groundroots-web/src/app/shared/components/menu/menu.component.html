@@ -1,1 +1,37 @@
-<p>menu works!</p>
+<div class="menu">
+    <div class="menu-header">
+        <div class="content">
+            <h2>Menu</h2>
+        </div>
+    </div>
+    <div class="menu-content">
+        <mat-list>
+            <div mat-subheader>General</div>
+            <mat-list-item routerLink="/app/coffee">
+                <mat-icon mat-list-icon>local_cafe</mat-icon>
+                <div mat-line> Coffee </div>
+            </mat-list-item>
+            <mat-list-item routerLink="/app/me/boxes">
+                <mat-icon mat-list-icon>inventory_2</mat-icon>
+                <div mat-line> Boxes </div>
+            </mat-list-item>
+            <div mat-subheader>Account</div>
+            <div *ngIf="loggedIn">
+                <mat-list-item routerLink="/app/me/profile">
+                    <mat-icon mat-list-icon>account_circle</mat-icon>
+                    <div mat-line> Profile </div>
+                </mat-list-item>
+                <mat-list-item (click)="signOut()">
+                    <mat-icon mat-list-icon>logout</mat-icon>
+                    <div mat-line> Logout </div>
+                </mat-list-item>
+            </div>
+            <div *ngIf="!loggedIn">
+                <mat-list-item routerLink="/auth/login">
+                    <mat-icon mat-list-icon>login</mat-icon>
+                    <div mat-line> Login </div>
+                </mat-list-item>
+            </div>
+        </mat-list>
+    </div>
+</div>

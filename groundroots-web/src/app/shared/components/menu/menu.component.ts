@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AccountService } from 'src/app/account/services/account.service';
+import { AuthService } from 'src/app/auth/services/auth.service';
+import { User } from '../../models/user.model';
 
 @Component({
   selector: 'app-menu',
@@ -7,9 +10,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
-  constructor() { }
+  loggedIn: boolean;
+
+  constructor(private auth: AuthService, private account: AccountService) { }
 
   ngOnInit() {
+    this.getAuth();
+  }
+
+  getAuth() {
+    return this.auth.getAuthState().subscribe(credentials => {
+      this.loggedIn = credentials != null;
+    });
+  }
+
+  signOut() {
+    this.auth.signOut();
   }
 
 }

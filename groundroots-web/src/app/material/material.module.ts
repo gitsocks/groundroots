@@ -11,6 +11,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatSelectModule } from '@angular/material/select';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
 
 @NgModule({
   declarations: [],
@@ -27,7 +28,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     MatDividerModule,
     MatSelectModule,
     MatToolbarModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatListModule
   ],
   exports: [
     MatFormFieldModule,
@@ -42,7 +44,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     MatDividerModule,
     MatSelectModule,
     MatToolbarModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatListModule
   ]
 })
 export class MaterialModule { }
