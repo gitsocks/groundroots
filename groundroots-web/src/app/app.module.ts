@@ -12,7 +12,6 @@ import { ShopModule } from './shop/shop.module';
 
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { ServiceWorkerModule } from '@angular/service-worker';
-import { environment } from '../environments/environment';
 
 
 @NgModule({
