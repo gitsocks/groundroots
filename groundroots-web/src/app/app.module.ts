@@ -11,6 +11,8 @@ import { AngularFireAuthGuardModule } from '@angular/fire/auth-guard';
 import { ShopModule } from './shop/shop.module';
 
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 
 @NgModule({
@@ -25,7 +27,8 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthGuardModule,
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]
