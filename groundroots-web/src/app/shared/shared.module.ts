@@ -9,9 +9,10 @@ import { TopNavigationComponent } from './components/top-navigation/top-navigati
 import { QuickBoxComponent } from './components/quick-box/quick-box.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { QuickBoxItemComponent } from './components/quick-box-item/quick-box-item.component';
+import { QuickLoginComponent } from './components/quick-login/quick-login.component';
 
 @NgModule({
-  declarations: [TopNavigationComponent, QuickBoxComponent, MenuComponent, QuickBoxItemComponent],
+  declarations: [TopNavigationComponent, QuickBoxComponent, MenuComponent, QuickBoxItemComponent, QuickLoginComponent],
   imports: [
     CommonModule,
     FormsModule,
@@ -30,6 +31,9 @@ import { QuickBoxItemComponent } from './components/quick-box-item/quick-box-ite
     QuickBoxItemComponent,
     MenuComponent,
     HttpClientModule
+  ],
+  entryComponents: [
+    QuickLoginComponent
   ]
 })
 

@@ -1,8 +1,11 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { MatSnackBar } from '@angular/material';
+import { MatDialog, MatSnackBar } from '@angular/material';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/auth/services/auth.service';
 import { LocalBoxService } from 'src/app/box/services/local-box.service';
 import { BoxItem } from '../../models/box-item.model';
 import { Box } from '../../models/box.model';
+import { QuickLoginComponent } from '../quick-login/quick-login.component';
 
 @Component({
   selector: 'app-quick-box',
@@ -18,7 +21,12 @@ export class QuickBoxComponent implements OnInit {
   ]
 
   @Output() close = new EventEmitter();
-  constructor(public localbox: LocalBoxService, private snack: MatSnackBar) { }
+  constructor(
+    public localbox: LocalBoxService, 
+    private snack: MatSnackBar, 
+    private auth: AuthService, 
+    private router: Router,
+    private dialog: MatDialog) { }
 
   ngOnInit() {
   }
@@ -52,8 +60,18 @@ export class QuickBoxComponent implements OnInit {
     if (weight >= 1) return this.boxSizes.filter(x => x.name == "Large")[0];
   }
 
-  closeBar() {
-    this.close.emit();
+  subscribe() {
+    this.auth.getAuthState().subscribe(credentials => {
+      console.log(credentials)
+      if (credentials) {
+        this.router.navigate(['/app/box'])
+      } else {
+        this.dialog.open(QuickLoginComponent).afterClosed().subscribe(() => {
+          this.close.emit();
+        });
+      }
+      // this.close.emit();
+    })
   }
 
 }

@@ -1,0 +1,17 @@
+.login-form-section .form {
+    width: 100%;
+}
+
+.register-form-section .form {
+    width: 100%;
+}
+
+a.hint {
+    color: gray;
+    margin: auto;
+}
+
+a.hint:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}

@@ -11,6 +11,6 @@
     </div>
     <div class="quick-box-content">
         <app-quick-box-item *ngFor="let item of localbox.getLocalBox().items" [item]="item" (remove)="remove($event)" (update)="update($event)"></app-quick-box-item>
-        <button (click)="closeBar()" routerLink="/app/box" class="btn primary" mat-raised-button> Subscribe Box </button>
+        <button (click)="subscribe()" *ngIf="localbox.getLocalBox().items.length > 0" class="btn primary" mat-raised-button> Subscribe Box </button>
     </div>
 </div>
