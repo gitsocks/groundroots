@@ -29,8 +29,10 @@ export class QuickBoxComponent implements OnInit {
 
   update(item: BoxItem) {
     const error = this.localbox.update(item);
-    if (error == "☝️ Max box size reached already!") {
+    if (error == "Max box size reached already!") {
       this.snack.open(error, "Awesome", { duration: 3000 });
+    } else if (error == "This will remove the item from your cart? Are you sure?") {
+      this.localbox.removeBoxItem(item);
     }
   }
 

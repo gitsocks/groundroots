@@ -74,6 +74,7 @@ export class CoffeeDetailsComponent implements OnInit, OnChanges {
         this.snack.open(error, "Awesome");
       } else {
         this.snack.open("Item added to box.", "Awesome", { duration: 3000 });
+        this.closePopup();
       }
     } else {
       const boxItems: BoxItem[] = [boxItem];

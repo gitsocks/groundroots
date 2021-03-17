@@ -1,4 +1,4 @@
-<h1 mat-dialog-title>🙌 Continue to Payment</h1>
+<h1 mat-dialog-title>Continue to Payment</h1>
 <form ngNoForm [action]="environment().payfast.url" (ngSubmit)="continue()">
     <div mat-dialog-content>
         <p>Are you sure you want to continue to payment?</p>
@@ -22,7 +22,6 @@
         <input type="hidden" name="custom_str1" value="{{ this.data.box.id }}">
     </div>
     <div mat-dialog-actions>
-        <button type="submit" mat-button color="primary"> Continue </button>
-        <button mat-button mat-dialog-close>Cancel</button>
+        <button type="submit" mat-button class="btn primary"> Continue </button>
     </div>
 </form>

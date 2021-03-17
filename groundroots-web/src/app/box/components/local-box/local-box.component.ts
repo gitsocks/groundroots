@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatSnackBar } from '@angular/material';
 import { Router } from '@angular/router';
+import { AddressComponent } from 'src/app/account/components/address/address.component';
 import { AccountService } from 'src/app/account/services/account.service';
 import { AuthService } from 'src/app/auth/services/auth.service';
 import { Address } from 'src/app/shared/models/address.model';
@@ -11,6 +12,7 @@ import { BoxService } from '../../services/box.service';
 import { LocalBoxService } from '../../services/local-box.service';
 import { ConfirmSubscriptionComponent } from '../dialogs/confirm-subscription/confirm-subscription.component';
 import { RemoveBoxItemComponent } from '../dialogs/remove-box-item/remove-box-item.component';
+import { SetAddressComponent } from '../dialogs/set-address/set-address.component';
 
 @Component({
   selector: 'app-local-box',
@@ -59,13 +61,21 @@ export class LocalBoxComponent implements OnInit {
     })
   }
 
+  setAddress() {
+    this.dialog.open(SetAddressComponent, { data: this.user, width: "60%" }).afterClosed().subscribe(response => {
+      if (response) {
+        this.snack.open("An error has occurred.", "Okay", { duration: 3000 });
+      }
+    })
+  }
+
   update(boxItem: BoxItem) {
     const error = this.localBoxService.update(boxItem);
-    if (error == "🛑 This will remove the item from your cart? Are you sure?") {
+    if (error == "This will remove the item from your cart? Are you sure?") {
       this.dialog.open(RemoveBoxItemComponent, { data: error }).afterClosed().subscribe(remove => {
         if (remove) this.localBoxService.removeBoxItem(boxItem);
       });
-    } else if (error == "☝️ Max box size reached already!") {
+    } else if (error == "Max box size reached already!") {
       this.snack.open(error, "Awesome", { duration: 3000 });
     }
   }

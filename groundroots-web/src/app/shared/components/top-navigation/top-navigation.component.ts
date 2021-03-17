@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { LocalBoxService } from 'src/app/box/services/local-box.service';
 
 @Component({
   selector: 'app-top-navigation',
@@ -10,7 +11,7 @@ export class TopNavigationComponent implements OnInit {
   @Output() toggleMenu = new EventEmitter();
   @Output() toggleBox = new EventEmitter();
 
-  constructor() { }
+  constructor(public localBox: LocalBoxService) { }
 
   ngOnInit() {
   }

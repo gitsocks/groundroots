@@ -23,13 +23,23 @@ export class AddressComponent implements OnInit {
     this.auth.getAuthState().subscribe(credentials => {
       this.user = { id: credentials.uid, email: credentials.email };
       this.account.fetchById(this.user.id).valueChanges().subscribe((user: User) => {
-        this.user.address = {
-          street: user.address.street,
-          city: user.address.city,
-          province: user.address.province,
-          country: user.address.country,
-          postalCode: user.address.postalCode
-        };
+        if (user.address) {
+          this.user.address = {
+            street: user.address.street,
+            city: user.address.city,
+            province: user.address.province,
+            country: user.address.country,
+            postalCode: user.address.postalCode
+          };
+        } else {
+          this.user.address = {
+            street: '',
+            city: '',
+            province: '',
+            country: '',
+            postalCode: ''
+          };
+        }
       });
     });
   }

@@ -28,3 +28,9 @@ mat-toolbar {
 .navigation-spacer {
   flex: 1 1 auto;
 }
+
+.mat-badge-content {
+    background-color: var(--dark-green) !important;
+    left: 0px !important;
+    top: 5px !important;
+}

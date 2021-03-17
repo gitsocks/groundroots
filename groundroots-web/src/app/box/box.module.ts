@@ -9,15 +9,20 @@ import { SuccessfulSubscriptionComponent } from './components/successful-subscri
 import { BoxDetailsComponent } from './components/box-details/box-details.component';
 import { BoxItemComponent } from './components/box-item/box-item.component';
 import { CancelSubscriptionComponent } from './components/dialogs/cancel-subscription/cancel-subscription.component';
+import { AddressComponent } from '../account/components/address/address.component';
+import { AccountModule } from '../account/account.module';
+import { SetAddressComponent } from './components/dialogs/set-address/set-address.component';
+import { CancelPaymentComponent } from './components/cancel-payment/cancel-payment.component';
 
 const routes: Routes = [
   { path: '', component: LocalBoxComponent },
   { path: 'payment/success', component: SuccessfulSubscriptionComponent },
+  { path: 'payment/cancel', component: CancelPaymentComponent },
   { path: 'view/:id', component: BoxDetailsComponent }
 ]
 
 @NgModule({
-  declarations: [LocalBoxComponent, LocalBoxItemComponent, RemoveBoxItemComponent, ConfirmSubscriptionComponent, SuccessfulSubscriptionComponent, BoxDetailsComponent, BoxItemComponent, CancelSubscriptionComponent],
+  declarations: [LocalBoxComponent, LocalBoxItemComponent, RemoveBoxItemComponent, ConfirmSubscriptionComponent, SuccessfulSubscriptionComponent, BoxDetailsComponent, BoxItemComponent, CancelSubscriptionComponent, SetAddressComponent, CancelPaymentComponent],
   imports: [
     SharedModule,
     RouterModule.forChild(routes)
@@ -25,7 +30,8 @@ const routes: Routes = [
   entryComponents: [
     RemoveBoxItemComponent,
     ConfirmSubscriptionComponent,
-    CancelSubscriptionComponent
+    CancelSubscriptionComponent,
+    SetAddressComponent
   ]
 })
 

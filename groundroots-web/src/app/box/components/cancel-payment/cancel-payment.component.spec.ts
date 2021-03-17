@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BottomNavigationComponent } from './bottom-navigation.component';
+import { CancelPaymentComponent } from './cancel-payment.component';
 
-describe('BottomNavigationComponent', () => {
-  let component: BottomNavigationComponent;
-  let fixture: ComponentFixture<BottomNavigationComponent>;
+describe('CancelPaymentComponent', () => {
+  let component: CancelPaymentComponent;
+  let fixture: ComponentFixture<CancelPaymentComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BottomNavigationComponent ]
+      declarations: [ CancelPaymentComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(BottomNavigationComponent);
+    fixture = TestBed.createComponent(CancelPaymentComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

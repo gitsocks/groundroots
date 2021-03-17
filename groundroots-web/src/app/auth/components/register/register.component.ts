@@ -22,8 +22,15 @@ export class RegisterComponent implements OnInit {
   async register() {
     const user =  await this.auth.signUpWithEmailAndPassword(this.user.email, this.user.password);
     this.user.id = user.id;
+    this.user.address = {
+      street: '',
+      city: '',
+      province: '',
+      country: '',
+      postalCode: ''
+    }
     this.account.create(this.user).then(() => {
-      this.router.navigate(['/shop']);
+      this.router.navigate(['/app/coffee']);
     });
   }
 }

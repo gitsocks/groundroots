@@ -7,6 +7,20 @@ section {
     margin-bottom: 0;
 }
 
+mat-radio-button {
+    margin-right: 10px;
+}
+
+.mat-button {
+    padding: 0 !important;
+}
+
+.box-details {
+    padding: 2rem;
+    background-color: white;
+    border-radius: 30px;
+}
+
 @media screen and (max-width: 600px) {
 
     h4 {
@@ -15,5 +29,10 @@ section {
 
     .box-items-wrapper {
         display: none;
+    }
+
+    mat-radio-button {
+        margin: 0;
+        display: block;
     }
 }

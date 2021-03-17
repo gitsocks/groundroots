@@ -1,11 +1,11 @@
 <mat-toolbar>
-    <button (click)="openMenu()" mat-icon-button class="example-icon" aria-label="menu-icon">
+    <button (click)="openMenu()" mat-icon-button class="nav-icon" aria-label="menu-icon">
         <mat-icon>menu</mat-icon>
     </button>
     <span class="navigation-spacer"></span>
     <h4 class="logo"> Ground Roots </h4>
     <span class="navigation-spacer"></span>
-    <button (click)="openBox()" mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+    <button (click)="openBox()" mat-icon-button class="nav-icon" aria-label="Shopping Cart" matBadgeSize="small" matBadge="{{localBox.getLocalBox().items.length}}" matBadgePosition="before">
         <mat-icon>shopping_bag</mat-icon>
     </button>
 </mat-toolbar>

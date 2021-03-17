@@ -12,6 +12,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
+import { MatBadgeModule } from '@angular/material/badge';
 
 @NgModule({
   declarations: [],
@@ -29,7 +30,8 @@ import { MatListModule } from '@angular/material/list';
     MatSelectModule,
     MatToolbarModule,
     MatSidenavModule,
-    MatListModule
+    MatListModule,
+    MatBadgeModule
   ],
   exports: [
     MatFormFieldModule,
@@ -45,7 +47,8 @@ import { MatListModule } from '@angular/material/list';
     MatSelectModule,
     MatToolbarModule,
     MatSidenavModule,
-    MatListModule
+    MatListModule,
+    MatBadgeModule
   ]
 })
 export class MaterialModule { }

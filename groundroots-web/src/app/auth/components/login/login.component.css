@@ -1,3 +1,13 @@
+a.hint {
+    color: gray;
+    margin: auto;
+}
+
+a.hint:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
 .login {
     height: 100% !important;
     width: 100% !important;

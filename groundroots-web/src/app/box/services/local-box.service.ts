@@ -39,9 +39,9 @@ export class LocalBoxService {
   }
 
   update(item: BoxItem) {
-    if (item.quantity < 1) return "🛑 This will remove the item from your cart? Are you sure?";
+    if (item.quantity < 1) return "This will remove the item from your cart? Are you sure?";
     const oldItem = this.findBoxItem(item);
-    if (this.maxBoxSizeReached(oldItem, item)) return "☝️ Max box size reached already!";
+    if (this.maxBoxSizeReached(oldItem, item)) return "Max box size reached already!";
     this.box.items[this.box.items.indexOf(oldItem)] = item;
     this.save();
   }

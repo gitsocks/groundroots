@@ -28,11 +28,7 @@ export class QuickBoxItemComponent implements OnInit {
 
   decrease() {
     this.item.quantity--;
-    if (this.item.quantity < 1) {
-      this.removeItem();
-    } else {
-      this.update.emit(this.item);
-    }
+    this.update.emit(this.item);
   }
 
 }

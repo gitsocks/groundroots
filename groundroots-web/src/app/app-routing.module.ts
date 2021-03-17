@@ -7,6 +7,7 @@ import { ShopComponent } from './shop/shop.component';
 const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['auth/login']);
 
 const routes: Routes = [
+  { path: '', redirectTo: '/app/coffee', pathMatch: 'full' },
   { path: 'auth', component: AuthComponent, loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)},
   { path: 'app', component: ShopComponent, loadChildren: () => import('./shop/shop.module').then(m => m.ShopModule)}
 ];
