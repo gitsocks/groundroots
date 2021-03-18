@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "ground-roots": {
+      "hosting": {
+        "groundroots-admin": [
+          "ground-roots"
+        ]
+      }
+    }
+  }
+}
