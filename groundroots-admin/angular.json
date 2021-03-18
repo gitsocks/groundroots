@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "groundroots-web": {
+    "groundroots-admin": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "../dist/app",
+            "outputPath": "../dist/admin",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -21,11 +21,9 @@
             "aot": false,
             "assets": [
               "src/favicon.ico",
-              "src/assets",
-              "src/manifest.webmanifest"
+              "src/assets"
             ],
             "styles": [
-              "src/custom-theme.scss",
               "src/styles.css"
             ],
             "scripts": []
@@ -38,7 +36,7 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
-              "baseHref": "/app/",
+              "baseHref": "/admin/",
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
@@ -54,27 +52,25 @@
                   "maximumWarning": "2mb",
                   "maximumError": "5mb"
                 }
-              ],
-              "serviceWorker": true,
-              "ngswConfigPath": "ngsw-config.json"
+              ]
             }
           }
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "groundroots-web:build"
+            "browserTarget": "groundroots-admin:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "groundroots-web:build:production"
+              "browserTarget": "groundroots-admin:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "groundroots-web:build"
+            "browserTarget": "groundroots-admin:build"
           }
         },
         "test": {
@@ -86,8 +82,7 @@
             "karmaConfig": "karma.conf.js",
             "assets": [
               "src/favicon.ico",
-              "src/assets",
-              "src/manifest.webmanifest"
+              "src/assets"
             ],
             "styles": [
               "src/styles.css"
@@ -112,20 +107,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "groundroots-web:serve"
+            "devServerTarget": "groundroots-admin:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "groundroots-web:serve:production"
+              "devServerTarget": "groundroots-admin:serve:production"
             }
           }
-        },
-        "deploy": {
-          "builder": "@angular/fire:deploy",
-          "options": {}
         }
       }
-    }
-  },
-  "defaultProject": "groundroots-web"
+    }},
+  "defaultProject": "groundroots-admin"
 }
