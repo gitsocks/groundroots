@@ -7,7 +7,7 @@
     "source": "functions"
   },
   "hosting": {
-    "public": "groundroots-web/dist/groundroots-web",
+    "public": "dist",
     "ignore": [
       "firebase.json",
       "**/.*",
@@ -15,8 +15,12 @@
     ],
     "rewrites": [
       {
-        "source": "**",
-        "destination": "/index.html"
+        "source": "/app/**",
+        "destination": "/app/index.html"
+      },
+      {
+        "source": "/admin/**",
+        "destination": "/admin/index.html"
       }
     ]
   }
