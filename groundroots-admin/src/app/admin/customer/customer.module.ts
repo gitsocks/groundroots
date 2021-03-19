@@ -4,6 +4,7 @@ import { CustomersComponent } from './components/customers/customers.component';
 import { CustomerDetailsComponent } from './components/customer-details/customer-details.component';
 import { RouterModule, Routes } from '@angular/router';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { AddCustomerComponent } from './components/add-customer/add-customer.component';
 
 const routes: Routes = [
   { path: '', component: CustomersComponent },
@@ -11,10 +12,13 @@ const routes: Routes = [
 ]
 
 @NgModule({
-  declarations: [CustomersComponent, CustomerDetailsComponent],
+  declarations: [CustomersComponent, CustomerDetailsComponent, AddCustomerComponent],
   imports: [
     SharedModule,
     RouterModule.forChild(routes)
+  ],
+  entryComponents: [
+    AddCustomerComponent
   ]
 })
 export class CustomerModule { }
