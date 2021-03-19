@@ -6,7 +6,8 @@ import { SharedModule } from '../shared/shared.module';
 
 const routes: Routes = [
   { path: '', component: DashboardComponent },
-  { path: 'account', loadChildren: () => import('./account/account.module').then(m => m.AccountModule) }
+  { path: 'account', loadChildren: () => import('./account/account.module').then(m => m.AccountModule) },
+  { path: 'customers', loadChildren: () => import('./customer/customer.module').then(m => m.CustomerModule) }
 ]
 
 @NgModule({

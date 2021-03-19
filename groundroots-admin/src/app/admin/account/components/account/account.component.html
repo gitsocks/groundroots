@@ -1,1 +1,24 @@
-<p>account works!</p>
+<mat-card>
+    <mat-card-title>Account</mat-card-title>
+    <mat-card-content *ngIf="user">
+        <div class="first-name">
+            <mat-form-field>
+                <mat-label>First Name</mat-label>
+                <input [(ngModel)]="user.firstName" matInput type="text">
+            </mat-form-field>
+        </div>
+        <div class="last-name">
+            <mat-form-field>
+                <mat-label>last Name</mat-label>
+                <input [(ngModel)]="user.lastName" matInput type="text">
+            </mat-form-field>
+        </div>
+        <div class="email">
+            <mat-form-field>
+                <mat-label>Email</mat-label>
+                <input [(ngModel)]="user.email" matInput type="text">
+            </mat-form-field>
+        </div>
+        <button mat-raised-button color="primary">Update Account</button>
+    </mat-card-content>
+</mat-card>

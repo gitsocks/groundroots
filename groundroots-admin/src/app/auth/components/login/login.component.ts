@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material';
 import { PopSnackComponent } from 'src/app/shared/components/snacks/pop-snack/pop-snack.component';
-import { AccountService } from 'src/app/shared/services/account.service';
+import { AccountService } from 'src/app/shared/services/account/account.service';
 import { AuthService } from '../../services/auth/auth.service';
 
 @Component({

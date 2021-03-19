@@ -2,7 +2,7 @@
     <mat-drawer #drawer mode="side">
         <mat-list>
             <div mat-subheader>Menu</div>
-            <mat-list-item>
+            <mat-list-item routerLink="/admin/customers">
                 <mat-icon mat-list-icon>people</mat-icon>
                 <div mat-line>Customers</div>
             </mat-list-item>
@@ -16,7 +16,7 @@
             </mat-list-item>
             <mat-divider></mat-divider>
             <div mat-subheader>Profile</div>
-            <mat-list-item>
+            <mat-list-item routerLink="/admin/account">
                 <mat-icon mat-list-icon>account_circle</mat-icon>
                 <div mat-line>Account</div>
             </mat-list-item>
@@ -37,5 +37,8 @@
                 <mat-icon>share</mat-icon>
             </button>
         </mat-toolbar>
+        <main>
+            <router-outlet></router-outlet>
+        </main>
     </mat-drawer-content>
 </mat-drawer-container>
