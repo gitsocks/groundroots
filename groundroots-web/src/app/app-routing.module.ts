@@ -8,7 +8,7 @@ const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['auth/login'])
 
 const routes: Routes = [
   { path: 'auth', component: AuthComponent, loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)},
-  { path: '', component: ShopComponent, loadChildren: () => import('./shop/shop.module').then(m => m.ShopModule)}
+  { path: 'app', component: ShopComponent, loadChildren: () => import('./shop/shop.module').then(m => m.ShopModule)}
 ];
 
 @NgModule({
