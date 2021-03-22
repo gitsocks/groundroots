@@ -38,7 +38,8 @@ export class AddProductComponent implements OnInit {
       type: '',
       blend: '',
       options: [],
-      roast: 'Light'
+      roast: 'Light',
+      image: ''
     };
     this.dataSource = this.product.options;
   }
@@ -69,9 +70,17 @@ export class AddProductComponent implements OnInit {
   openConfirmAddDialog() {
     this.dialog.open(ConfirmComponent, {data: {title: "Add Product", message: "Are you sure you want to add the product?"}}).afterClosed().subscribe(confirmation => {
       if (confirmation) {
-        this.productService.create(this.product, this.image).then(response => {
-          this.snack.open("Product has been created!", "Ok", {duration: 3000}).afterDismissed().subscribe(() => {
-            this.router.navigate(['/admin/products']);
+        this.productService.create(this.product).then(doc => {
+          this.product.id = doc.id;
+          this.productService.updateImage(this.product, this.image).then(reference => {
+            reference.ref.getDownloadURL().then(url => {
+              this.product.image = url;
+              this.productService.update(this.product).then(() => {
+                this.snack.open("Product has been created!", "Ok", { duration: 3000 }).afterDismissed().subscribe(() => {
+                  this.router.navigate(['/admin/products']);
+                })
+              })
+            })
           })
         }).catch(error => {
           this.snack.open("There has been an error.", "Ok", { duration: 3000 });

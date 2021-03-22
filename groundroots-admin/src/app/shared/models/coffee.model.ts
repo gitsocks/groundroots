@@ -7,5 +7,6 @@ export interface Coffee {
     type: string;
     blend: string;
     roast: string;
+    image: string;
     options: CoffeeOption[]
 }

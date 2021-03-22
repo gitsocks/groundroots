@@ -42,7 +42,8 @@ export class ProductDetailsComponent implements OnInit {
         roastery: data.roastery,
         blend: data.blend,
         roast: data.roast,
-        options: data.options
+        options: data.options,
+        image: ''
       }
       this.getProductImage();
     });
