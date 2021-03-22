@@ -67,7 +67,7 @@ export class BoxDetailsComponent implements OnInit {
           this.box.status = "Cancelled";
           this.boxService.update(this.box).then(successful => {
             this.snack.open("Box has been cancelled!", "Thank You", { duration: 3000 }).afterDismissed().subscribe(() => {
-              this.router.navigate(['/me/boxes']);
+              this.router.navigate(['/app/me/boxes']);
             })
           });
         }
