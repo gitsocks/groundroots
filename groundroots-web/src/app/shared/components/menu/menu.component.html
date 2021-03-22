@@ -7,17 +7,17 @@
     <div class="menu-content">
         <mat-list>
             <div mat-subheader>General</div>
-            <mat-list-item routerLink="/app/coffee">
+            <mat-list-item routerLink="/coffee">
                 <mat-icon mat-list-icon>local_cafe</mat-icon>
                 <div mat-line> Coffee </div>
             </mat-list-item>
-            <mat-list-item routerLink="/app/me/boxes">
+            <mat-list-item routerLink="/me/boxes">
                 <mat-icon mat-list-icon>inventory_2</mat-icon>
                 <div mat-line> Boxes </div>
             </mat-list-item>
             <div mat-subheader>Account</div>
             <div *ngIf="loggedIn">
-                <mat-list-item routerLink="/app/me/profile">
+                <mat-list-item routerLink="/me/profile">
                     <mat-icon mat-list-icon>account_circle</mat-icon>
                     <div mat-line> Profile </div>
                 </mat-list-item>
