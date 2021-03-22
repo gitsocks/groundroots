@@ -1,0 +1,15 @@
+<mat-card-title>Product Option</mat-card-title>
+<mat-form-field>
+    <mat-label>Size</mat-label>
+    <input matInput [(ngModel)]="option.size">
+</mat-form-field>
+<mat-form-field>
+    <mat-label>Weight</mat-label>
+    <input type="number" matInput [(ngModel)]="option.weight">
+</mat-form-field>
+<mat-slide-toggle>Ground</mat-slide-toggle>
+<mat-form-field>
+    <mat-label>Price</mat-label>
+    <input type="number" matInput [(ngModel)]="option.price">
+</mat-form-field>
+<button (click)="addOption()" mat-raised-button color="primary">Add</button>

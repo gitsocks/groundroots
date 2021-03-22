@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { MatDialogModule, MatSnackBarModule } from '@angular/material';
+import { MatDialogModule, MatSlideToggleModule, MatSnackBarModule } from '@angular/material';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -12,6 +12,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [],
@@ -29,7 +30,9 @@ import { MatTabsModule } from '@angular/material/tabs';
     MatPaginatorModule,
     MatStepperModule,
     MatDialogModule,
-    MatTabsModule
+    MatTabsModule,
+    MatSelectModule,
+    MatSlideToggleModule
   ],
   exports: [
     MatSnackBarModule,
@@ -45,7 +48,9 @@ import { MatTabsModule } from '@angular/material/tabs';
     MatPaginatorModule,
     MatStepperModule,
     MatDialogModule,
-    MatTabsModule
+    MatTabsModule,
+    MatSelectModule,
+    MatSlideToggleModule
   ]
 })
 

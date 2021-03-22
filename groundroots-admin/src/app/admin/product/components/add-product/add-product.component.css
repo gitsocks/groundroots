@@ -1,0 +1,17 @@
+mat-form-field {
+    display: block;
+}
+
+mat-card-content {
+    width: 200px;
+    margin: 0;
+}
+
+.file-input mat-label {
+    display: block;
+    font-weight: bold;
+}
+
+.mat-table {
+    width: 100%;
+}

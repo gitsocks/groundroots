@@ -8,6 +8,7 @@ import { SuccessSnackComponent } from './components/snacks/success-snack/success
 import { PopSnackComponent } from './components/snacks/pop-snack/pop-snack.component';
 import { ConfirmComponent } from './components/confirm/confirm.component';
 
+
 @NgModule({
   declarations: [SuccessSnackComponent, PopSnackComponent, ConfirmComponent],
   imports: [

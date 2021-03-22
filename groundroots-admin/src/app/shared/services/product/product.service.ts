@@ -13,9 +13,32 @@ export class ProductService {
     private storage: AngularFireStorage
   ) { }
 
-  async create(product: Coffee) {
+  fetchAll() {
+    return this.firestore.collection<Coffee>('products').valueChanges({ idField: 'id' });
+  }
+
+  fetchById(id: string) {
+    return this.firestore.collection<Coffee>('products').doc(id).get();
+  }
+
+  async create(product: Coffee, image: File) {
     const doc = await this.firestore.collection('products').add(product);
     const reference = this.storage.ref(`/products/${doc.id}`);
-    return reference.put(product.imageFile);
+    console.log(product)
+    return reference.put(image);
+  }
+
+  fetchProductImage(product: Coffee) {
+    return this.storage.ref(`/products/${product.id}`).getDownloadURL();
+  }
+
+  update(product: Coffee) {
+    return this.firestore.collection('products').doc(product.id).update(product);
+  }
+
+  updateImage(product: Coffee, image: File) {
+    const reference = this.storage.ref(`/products/${product.id}`);
+    reference.delete();
+    return reference.put(image);
   }
 }
