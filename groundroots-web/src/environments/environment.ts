@@ -18,8 +18,8 @@ export const environment = {
     url: "https://sandbox.payfast.co.za/eng/process",
     merchant_id: "10021945",
     merchant_key: "1mqknuo6fdkmz",
-    return_url: "https://ground-roots.web.app/app/box/payment/success",
-    cancel_url: "https://ground-roots.web.app/app/box/payment/cancel",
+    return_url: "https://ground-roots.web.app/box/payment/success",
+    cancel_url: "https://ground-roots.web.app/box/payment/cancel",
     notify_url: "https://us-central1-ground-roots.cloudfunctions.net/app/payment"
   }
 };

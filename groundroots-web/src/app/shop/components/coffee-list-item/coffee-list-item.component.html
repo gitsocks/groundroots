@@ -1,5 +1,5 @@
 <mat-card *ngIf="coffee" class="bg-primary">
-    <img src="assets/images/vectors/coffee/coffee-bag.svg" alt="">
+    <img src="{{ coffee.image }}" alt="">
     <mat-card-content>
         <mat-card-title> {{ coffee.name }} </mat-card-title>
         <p> {{ coffee.roastery }} </p>

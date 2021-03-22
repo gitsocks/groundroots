@@ -1,0 +1,67 @@
+<header>
+    <h1> Products </h1>
+</header>
+<section class="row">
+    <div class="col-md-4">
+        <mat-card>
+            <mat-card-title>Product Details</mat-card-title>
+            <mat-card-content>
+                <mat-form-field>
+                    <mat-label>Name</mat-label>
+                    <input matInput [(ngModel)]="product.name">
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Roastery</mat-label>
+                    <mat-select [(value)]="product.roastery">
+                        <mat-option value="Red Truck Coffee">Red Truck Coffee</mat-option>
+                        <mat-option value="Roastmasters">Roastmasters</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Roast</mat-label>
+                    <mat-select [(value)]="product.roast">
+                        <mat-option value="Light">Light</mat-option>
+                        <mat-option value="Medium">Medium</mat-option>
+                        <mat-option value="Dark">Dark</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Type</mat-label>
+                    <mat-select [(value)]="product.type">
+                        <mat-option value="Single-Origin">Single-Origin</mat-option>
+                        <mat-option value="Blend">Blend</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Blend</mat-label>
+                    <input matInput [(ngModel)]="product.blend">
+                </mat-form-field>
+                <div class="file-input">
+                    <mat-label>Image</mat-label>
+                    <input (change)="setFile($event)" type="file">
+                </div>
+            </mat-card-content>
+            <button (click)="openConfirmAddDialog()" mat-raised-button color="primary" class="mt-3">Add Product</button>
+        </mat-card>
+    </div>
+    <div class="col-md-8">
+        <mat-card-title>Options</mat-card-title>
+        <button (click)="openAddOptionDialog()" mat-raised-button color="primary" class="mb-3"> Add Option </button>
+        <div class="options">
+            <mat-card *ngFor="let option of product.options">
+                <mat-card-title> {{ option.size }} </mat-card-title>
+                <mat-card-content class="d-flex justify-content-between align-center">
+                    <p>
+                        <span *ngIf="option.ground == true">Ground</span>
+                        <span *ngIf="option.ground == false">Not Ground</span>
+                    </p>
+                    <p> {{ option.price | currency:"R" }} </p>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button mat-button color="primary" (click)="openEditOptionDialog(option)"> Edit </button>
+                    <button mat-button color="warn" (click)="openRemoveOptionDialog(option)"> Remove </button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,26 @@
+<form [formGroup]="customerDetails">
+    <h2>New Customer</h2>
+    <mat-form-field>
+        <mat-label>First Name</mat-label>
+        <input matInput formControlName="firstName" required>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Last Name</mat-label>
+        <input matInput formControlName="lastName" required>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" required>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Cellphone</mat-label>
+        <input matInput formControlName="cellphone" required>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input matInput formControlName="password" required>
+    </mat-form-field>
+    <div>
+        <button mat-raised-button color="primary" (click)="addCustomer()">Next</button>
+    </div>
+</form>
